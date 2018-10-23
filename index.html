@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>TKD Poomse</title>
@@ -252,7 +253,7 @@
                 return { row: row, col: col, moves: moves };
             }
 
-            let terms = {...directions, ...stances, ...blocks, ...punches, ...kicks};
+            let terms = Object.assign({}, directions, stances, blocks, punches, kicks);
             with (terms) {
                 window.gichu1 = {
                     name: 'gichu1',
