@@ -1,0 +1,543 @@
+<html>
+    <head>
+        <title>TKD Poomse</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1.0, minimal-ui" />
+        <meta name="apple-mobile-web-app-title" content="TKD Poomse" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <style>
+            .print { display: none; }
+
+            ol { padding: 0; padding-bottom: 200em; list-style-position: inside; }
+            ol > li { display: block; }
+            ul { list-style-type: none; padding: 0.25em; padding-left: 1em; display: flex; }
+            ul li { opacity: 0.75; display: inline; border: 1px dotted gray; padding: 0 0.5em; margin: 0 0.25em; border-radius: 0.25em; min-width: 11em; display: inline-block; flex-wrap: nowrap; }
+
+            li.forward,
+            li.left_90,
+            li.right_90,
+            li.left_180,
+            li.right_180,
+            li.left_270,
+            li.right_270 {
+                background-color: transparent;
+            }
+            
+            li.joonbee {background-color: #ffffcc; }
+            li.left_walking_stance, li.right_walking_stance { background-color: #FFF6B3; }
+            li.left_front_stance, li.right_front_stance { background-color: #FFEF80; }
+            li.left_horse_stance, li.right_horse_stance { background-color: #FFE633; }
+            li.left_back_stance, li.right_back_stance { background-color: #ffd400; }
+            li.kihap { background-color: #e68a00; }
+            
+            li.left_low_block, li.right_low_block { background-color: #C8F4C1; }
+            li.left_inward_block, li.right_inward_block { background-color: #92E984; }
+            li.left_high_block, li.right_high_block { background-color: #5BDE46; }
+            li.left_outward_block, li.right_outward_block { background-color: #24D308; }
+            li.left_high_outward_block, li.right_high_outward_block { background-color: #189204; }
+
+            li.left_punch, li.right_punch { background-color: #BFDCF7; }
+            li.left_high_punch, li.right_high_punch { background-color: #60A8EB; }
+            li.left_side_punch, li.right_side_punch { background-color: #2085E3; }
+
+            li.left_front_kick, li.right_front_kick { background-color: #ff8566; }
+
+            ul li:hover { opacity: 1; }
+
+            .pattern { padding: 3em 0 3em 2em; }
+            .pattern td { width: 2em; }
+            .pattern tr { height: 2em; }
+            .pattern td.t { width: 1em; }
+            .pattern tr.f { height: 1em; }
+            .pattern td.b { background-color: black; }
+
+            body._1_1 .pattern tr:nth-child(1) td:nth-child(1),
+            body._1_2 .pattern tr:nth-child(1) td:nth-child(2),
+            body._1_3 .pattern tr:nth-child(1) td:nth-child(3),
+            body._1_4 .pattern tr:nth-child(1) td:nth-child(4),
+            body._1_5 .pattern tr:nth-child(1) td:nth-child(5),
+            body._2_1 .pattern tr:nth-child(2) td:nth-child(1),
+            body._2_2 .pattern tr:nth-child(2) td:nth-child(2),
+            body._2_3 .pattern tr:nth-child(2) td:nth-child(3),
+            body._2_4 .pattern tr:nth-child(2) td:nth-child(4),
+            body._2_5 .pattern tr:nth-child(2) td:nth-child(5),
+            body._3_1 .pattern tr:nth-child(3) td:nth-child(1),
+            body._3_2 .pattern tr:nth-child(3) td:nth-child(2),
+            body._3_3 .pattern tr:nth-child(3) td:nth-child(3),
+            body._3_4 .pattern tr:nth-child(3) td:nth-child(4),
+            body._3_5 .pattern tr:nth-child(3) td:nth-child(5),
+            body._4_1 .pattern tr:nth-child(4) td:nth-child(1),
+            body._4_2 .pattern tr:nth-child(4) td:nth-child(2),
+            body._4_3 .pattern tr:nth-child(4) td:nth-child(3),
+            body._4_4 .pattern tr:nth-child(4) td:nth-child(4),
+            body._4_5 .pattern tr:nth-child(4) td:nth-child(5),
+            body._5_1 .pattern tr:nth-child(5) td:nth-child(1),
+            body._5_2 .pattern tr:nth-child(5) td:nth-child(2),
+            body._5_3 .pattern tr:nth-child(5) td:nth-child(3),
+            body._5_4 .pattern tr:nth-child(5) td:nth-child(4),
+            body._5_5 .pattern tr:nth-child(5) td:nth-child(5),
+            body._6_1 .pattern tr:nth-child(6) td:nth-child(1),
+            body._6_2 .pattern tr:nth-child(6) td:nth-child(2),
+            body._6_3 .pattern tr:nth-child(6) td:nth-child(3),
+            body._6_4 .pattern tr:nth-child(6) td:nth-child(4),
+            body._6_5 .pattern tr:nth-child(6) td:nth-child(5),
+            body._7_1 .pattern tr:nth-child(7) td:nth-child(1),
+            body._7_2 .pattern tr:nth-child(7) td:nth-child(2),
+            body._7_3 .pattern tr:nth-child(7) td:nth-child(3),
+            body._7_4 .pattern tr:nth-child(7) td:nth-child(4),
+            body._7_5 .pattern tr:nth-child(7) td:nth-child(5) {
+                background-color: blue;
+                opacity: 1;
+            }
+
+            .order0  { opacity: 0.07; }
+            .order1  { opacity: 0.11; }
+            .order2  { opacity: 0.15; }
+            .order3  { opacity: 0.19; }
+            .order4  { opacity: 0.23; }
+            .order5  { opacity: 0.27; }
+            .order6  { opacity: 0.31; }
+            .order7  { opacity: 0.35; }
+            .order8  { opacity: 0.39; }
+            .order9  { opacity: 0.43; }
+            .order10 { opacity: 0.47; }
+            .order11 { opacity: 0.51; }
+            .order12 { opacity: 0.55; }
+            .order13 { opacity: 0.60; }
+            .order14 { opacity: 0.66; }
+            .order15 { opacity: 0.73; }
+            .order16 { opacity: 0.81; }
+            .order17 { opacity: 0.9; }
+            .order18 { opacity: 1; }
+
+            body { margin: 0; height: 100%; display: flex; }
+            h3 {
+                float: left;
+                padding: 0.6em;
+                margin-top: 0;
+                border-style: solid;
+                border-color: gray;
+                border-width: 0 1px 1px 0;
+                border-top-right-radius: 1em;
+                white-space: nowrap;
+            }
+            section:hover h3 { background-color: lightgray; }
+            section.gichu h3 {
+                border-color: blue;
+            }
+            section.gichu h3:hover,
+            section.gichu:hover h3 { background-color: lightblue; }
+            section.taeguk h3 {
+                border-color: red;
+            }
+            section.taeguk h3:hover,
+            section.taeguk:hover h3 { background-color: lightpink; }
+
+            section { flex-wrap: nowrap; }
+            section .content {
+                padding-left: 1em;
+                position: absolute;
+                top: 2.85em;
+                left: 0;
+                display: none;
+                width: 100%;
+                height: 100%;
+            }
+            section .content:hover,
+            section h3:hover + .content { display: block; }
+
+            .content img {
+                height: 15em;
+                left: 15em;
+                top: 1em;
+                position: absolute;
+                border: 1px solid black;
+                border-radius: 1em;
+            }
+            .content img:hover {
+                height: 95%;
+                z-index: 99;
+            }
+
+            #terms h4 { display: none; }
+            #terms .content .selected { display: flex; flex-direction: column; }
+            #terms .content .selected td { border: 1px solid gray; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; }
+            #terms .content .selected td:last-child { border: 0; }
+
+            #terms .content td { overflow: hidden; min-width: 10em; }
+            #terms .content td iframe { display: none; height: 230em; width: 100%; margin-top: -18em; margin-left: 0.5em; }
+            #terms .content .selected iframe { display: block; }
+
+            #terms h4 { margin: 1.5em 0 0.5em 0; }
+            #terms .content { width: 48em; margin-left: 1em; position: absolute; left: 43em; display: block; }
+            #terms td { border-bottom: 1px dotted gray; padding: 0.5em; padding-right: 0; }
+            #terms tr:last-child td { border: 0; }
+            #terms .content table { width: 100%; }
+            #terms .content tr { display: none; white-space: nowrap; }
+            #terms:hover h4 { display: block; }
+            #terms:hover .content { height: 230em; width: 100%; left: 0; display: block; }
+            #terms:hover .content table { width: auto; }
+            #terms:hover .content tr { display: table-row; }
+            #terms:hover .content iframe { display: none; }
+            #terms:hover .content .selected td { border: 0; }
+        </style>
+        <style media="print">
+            * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
+            .print { display: unset !important; }
+            body { display: unset; }
+            iframe { display: none !important; }
+            section .content,
+            #terms .content { display: block !important; position: relative !important; top: unset !important; right: unset !important; left: unset !important; width: auto !important; height: auto !important; }
+            h3 { float: unset !important; background-color: initial !important; border-right: none !important; page-break-before: always; }
+            .taeguk .pattern { page-break-after: always; }
+            img { height: unset !important; width: 95% !important; left: unset !important; top: unset !important; position: relative !important; }
+            #terms h4 { display: block !important; }
+            #terms .content tr { display: unset !important; }
+            #terms .content .selected td { border: none !important; }
+            ol { padding-bottom: 0 !important; font-size: 1.2em; }
+        </style>
+        <script>
+            var move = function(name, ko, fi, en) {
+                return { name: name, ko: ko, fi: fi, en: en };
+            };
+
+            window.directions = {
+                forward: move('forward', 'ap', 'eteenpäin', ''),
+                left_90: move('left_90', '', 'vasemmalle 90°', ''),
+                right_90: move('right_90', '', 'oikealle 90°', ''),
+                left_180: move('left_180', '', 'vasemmalle 180°', ''),
+                right_180: move('right_180', '', 'oikealle 180°', ''),
+                left_270: move('left_270', '', 'vasemmalle 270°', ''),
+                right_270: move('right_270', '', 'oikealle 270°', '')
+            };
+            window.stances = {
+                kihap: move('kihap', 'kihap', 'huuto: kiai!', ''),
+                joonbee: move('joonbee', 'junbi', 'valmistaudu', ''),
+                left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', ''),
+                right_front_stance: move('right_Front_Stance', '(orun) ap kubi', '(oikea) pitkä perusaskel', ''),
+                left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', '(vasen) lyhyt perusaskel', ''),
+                right_walking_stance: move('right_Walking_Stance', '(orun) ap sogi', '(oikea) lyhyt perusaskel', ''),
+                left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', '(vasen) hevosseisonta', ''),
+                right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', '(oikea) hevosseisonta', ''),
+                left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', '(vasen takana) takaseisonta', ''),
+                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', '')
+            };
+            window.blocks = {
+                left_low_block: move('left_Low_Block', '(wen) are maki', '(vasen) alatorjunta', ''),
+                right_low_block: move('right_Low_Block', '(orun) are maki', '(oikea) alatorjunta', ''),
+                left_inward_block: move('left_Inward_Block', '(wen) momtong maki', '(vasen) keskitorjunta', ''),
+                right_inward_block: move('right_Inward_Block', '(orun) momtong maki', '(oikea) keskitorjunta', ''),
+                left_high_block: move('left_High_Block', '(wen) olgul maki', '(vasen) ylätorjunta', ''),
+                right_high_block: move('right_High_Block', '(orun) olgul maki', '(oikea) ylätorjunta', ''),
+                left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakat maki', '(vasen) sisäranteella keskitorjunta ulospäin', ''),
+                right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakat maki', '(oikea) sisäranteella keskitorjunta ulospäin', ''),
+                left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakat maki', '(vasen) sisäranteella ylätorjunta ulospäin', ''),
+                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakat maki', '(oikea) sisäranteella ylätorjunta ulospäin', '')
+                
+            };
+            window.punches = {
+                left_punch: move('left_Punch', '(wen) jirugi', '(vasen) suora lyönti', ''),
+                right_punch: move('right_Punch', '(orun) jirugi', '(oikea) suora lyönti', ''),
+                left_high_punch: move('left_High_Punch', '(wen) olgul jirugi', '(vasen) ylälyönti', ''),
+                right_high_punch: move('right_High_Punch', '(orun) olgul jirugi', '(oikea) ylälyönti', ''),
+                left_side_punch: move('left_Side_Punch', '(wen) yop jirugi', '(vasen) sivulyönti', ''),
+                right_side_punch: move('right_Side_Punch', '(orun) yop jirugi', '(oikea) sivulyönti', '')
+            };
+            window.kicks = {
+                left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', ''),
+                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', '')
+            };
+
+            var part = function(row, col, moves) {
+                return { row: row, col: col, moves: moves };
+            }
+
+            let terms = {...directions, ...stances, ...blocks, ...punches, ...kicks};
+            with (terms) {
+                window.gichu1 = {
+                    name: 'gichu1',
+                    parts: [
+                        part(5, 3, [joonbee]),
+                        part(5, 2, [left_90, left_front_stance, left_low_block]),
+                        part(5, 1, [forward, right_front_stance, right_punch]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 5, [forward, left_front_stance, left_punch]),
+                        part(4, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_front_stance, right_punch]),
+                        part(2, 3, [forward, left_front_stance, left_punch]),
+                        part(1, 3, [forward, right_front_stance, right_punch]),
+                        part(1, 3, [kihap]),
+                        part(1, 3, []),
+                        part(1, 4, [left_270, left_front_stance, left_low_block]),
+                        part(1, 5, [forward, right_front_stance, right_punch]),
+                        part(1, 2, [right_180, right_front_stance, right_low_block]),
+                        part(1, 1, [forward, left_front_stance, left_punch]),
+                        part(1, 3, []),
+                        part(2, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_front_stance, right_punch]),
+                        part(4, 3, [forward, left_front_stance, left_punch]),
+                        part(5, 3, [forward, right_front_stance, right_punch]),
+                        part(5, 3, [kihap]),
+                        part(5, 3, []),
+                        part(5, 2, [left_270, left_front_stance, left_low_block]),
+                        part(5, 1, [forward, right_front_stance, right_punch]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 5, [forward, left_front_stance, left_punch])
+                ]};
+                window.gichu2 = {
+                    name: 'gichu2',
+                    parts: [
+                        part(5, 3, [joonbee]),
+                        part(5, 2, [left_90, left_front_stance, left_low_block]),
+                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 5, [forward, left_front_stance, left_high_punch]),
+                        part(4, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_front_stance, right_high_block]),
+                        part(2, 3, [forward, left_front_stance, left_high_block]),
+                        part(1, 3, [forward, right_front_stance, right_high_block]),
+                        part(1, 3, [kihap]),
+                        part(1, 3, []),
+                        part(1, 4, [left_270, left_front_stance, left_low_block]),
+                        part(1, 5, [forward, right_front_stance, right_high_punch]),
+                        part(1, 2, [right_180, right_front_stance, right_low_block]),
+                        part(1, 1, [forward, left_front_stance, left_high_punch]),
+                        part(1, 3, []),
+                        part(2, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_front_stance, right_high_block]),
+                        part(4, 3, [forward, left_front_stance, left_high_block]),
+                        part(5, 3, [forward, right_front_stance, right_high_block]),
+                        part(5, 3, [kihap]),
+                        part(5, 3, []),
+                        part(5, 2, [left_270, left_front_stance, left_low_block]),
+                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 5, [forward, left_front_stance, left_high_punch])
+                ]};
+                window.gichu3 = {
+                    name: 'gichu3',
+                    parts: [
+                        part(5, 3, [joonbee]),
+                        part(5, 2, [left_90, right_back_stance, left_inner_forearm_outward_block]),
+                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
+                        part(5, 5, [forward, left_front_stance, left_high_punch]),
+                        part(4, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_horse_stance, right_side_punch]),
+                        part(2, 3, [forward, left_horse_stance, left_side_punch]),
+                        part(1, 3, [forward, right_horse_stance, right_side_punch]),
+                        part(1, 3, [kihap]),
+                        part(1, 3, []),
+                        part(1, 4, [left_270, right_back_stance, left_inner_forearm_outward_block]),
+                        part(1, 5, [forward, right_front_stance, right_high_punch]),
+                        part(1, 2, [right_180, left_back_stance, right_inner_forearm_outward_block]),
+                        part(1, 1, [forward, left_front_stance, left_high_punch]),
+                        part(1, 3, []),
+                        part(2, 3, [left_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_horse_stance, right_side_punch]),
+                        part(4, 3, [forward, left_horse_stance, left_side_punch]),
+                        part(5, 3, [forward, right_horse_stance, right_side_punch]),
+                        part(5, 3, [kihap]),
+                        part(5, 3, []),
+                        part(5, 2, [left_270, right_back_stance, left_inner_forearm_outward_block]),
+                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
+                        part(5, 5, [forward, left_front_stance, left_high_punch])
+                ]};
+
+                window.taeguk1 = {
+                    name: 'taeguk1',
+                    parts: [
+                        part(5, 3, [joonbee]),
+                        part(5, 2, [left_90, left_walking_stance, left_low_block]),
+                        part(5, 1, [forward, right_walking_stance, right_punch]),
+                        part(5, 4, [right_180, right_walking_stance, right_low_block]),
+                        part(5, 5, [forward, left_walking_stance, left_punch]),
+                        part(4, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_low_block]),
+                        part(4, 3, [right_punch]),
+                        part(4, 3, []),
+                        part(3, 4, [right_90, right_walking_stance, left_inward_block]),
+                        part(3, 5, [forward, left_walking_stance, right_punch]),
+                        part(3, 2, [left_180, left_walking_stance, right_inward_block]),
+                        part(3, 1, [forward, right_walking_stance, left_punch]),
+                        part(2, 3, []),
+                        part(2, 3, [right_90, right_front_stance, right_low_block]),
+                        part(2, 3, [left_punch]),
+                        part(2, 3, []),
+                        part(1, 2, [left_90, left_walking_stance, left_high_block]),
+                        part(1, 1, [right_front_kick, right_punch]),
+                        part(1, 4, [right_180, right_walking_stance, right_high_block]),
+                        part(1, 5, [left_front_kick, left_punch]),
+                        part(2, 3, []),
+                        part(2, 3, [right_90, left_front_stance, left_low_block]),
+                        part(3, 3, [forward, right_front_stance, right_punch]),
+                        part(3, 3, [kihap])
+                ]};
+
+                window.taeguk2 = {
+                    name: 'taeguk2',
+                    parts: [
+                        part(7, 3, [joonbee]),
+                        part(7, 2, [left_90, left_walking_stance, left_low_block]),
+                        part(7, 1, [forward, right_front_stance, right_punch]),
+                        part(7, 4, [right_180, right_walking_stance, right_low_block]),
+                        part(7, 5, [forward, left_front_stance, left_punch]),
+                        part(7, 5, []),
+                        part(6, 3, [left_90, left_walking_stance, right_inward_block]),
+                        part(5, 3, [forward, right_walking_stance, left_inward_block]),
+                        part(5, 5, []),
+                        part(4, 2, [left_90, left_walking_stance, left_low_block]),
+                        part(4, 1, [right_front_kick, right_front_stance, right_high_punch]),
+                        part(4, 4, [right_180, right_walking_stance, right_low_block]),
+                        part(4, 5, [left_front_kick, left_front_stance, left_high_punch]),
+                        part(4, 5, []),
+                        part(3, 3, [left_90, left_walking_stance, left_high_block]),
+                        part(2, 3, [forward, right_walking_stance, right_high_block]),
+                        part(2, 3, []),
+                        part(1, 4, [left_270, left_walking_stance, right_inward_block]),
+                        part(1, 2, [right_180, right_walking_stance, left_inward_block]),
+                        part(1, 2, []),
+                        part(1, 3, [left_90, left_walking_stance, left_low_block]),
+                        part(2, 3, [right_front_kick, right_walking_stance, right_punch]),
+                        part(3, 3, [left_front_kick, left_walking_stance, left_punch]),
+                        part(4, 3, [right_front_kick, right_walking_stance, right_punch]),
+                        part(4, 3, [kihap])
+                ]};
+
+                window.gichu = [gichu1, gichu2, gichu3];
+                window.taeguk = [taeguk1, taeguk2];
+            };
+        </script>
+    </head>
+    <body>
+        <section id="terms">
+            <h3 onclick="">Terms</h3>
+            <div class="content">
+                <br />
+            </div>
+        </section>
+
+        <section class="gichu" id="gichu1">
+            <h3 onclick="">GI CHU IL (1.) PU</h3>
+            <div class="content">
+                <table class="pattern">
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                </table>
+                <ol class="moves"></ol>
+                <br />
+            </div>
+        </section>
+
+        <section class="gichu" id="gichu2">
+            <h3 onclick=""><span class="print">GI CHU </span>I (2.) PU</h3>
+            <div class="content">
+                <table class="pattern">
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                </table>
+                <ol class="moves"></ol>
+                <br />
+            </div>
+        </section>
+        <section class="gichu" id="gichu3">
+            <h3 onclick=""><span class="print">GI CHU </span>SAM (3.) PU</h3>
+            <div class="content">
+                <table class="pattern">
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                </table>
+                <ol class="moves"></ol>
+                <br />
+            </div>
+        </section>
+
+        <section class="taeguk" id="taeguk1">
+            <h3 onclick="">TAEGUK IL (1.) JANG</h3>
+            <div class="content">
+                <img src="https://vignette.wikia.nocookie.net/taekwondo/images/5/52/PoomsaeT1_3D.png/revision/latest/scale-to-width-down/1024?cb=20180524214834" />
+                <table class="pattern">
+                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                    <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
+                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                    <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
+                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                </table>
+                <ol class="moves"></ol>
+                <br />
+            </div>
+        </section>
+
+        <section class="taeguk" id="taeguk2">
+            <h3 onclick=""><span class="print">TAEGUK </span>I (2.) JANG</h3>
+            <div class="content">
+                <img src="https://vignette.wikia.nocookie.net/taekwondo/images/9/9a/PoomsaeT2_3D.png/revision/latest/scale-to-width-down/1024?cb=20170329215102" />
+                <table class="pattern">
+                    <tr>          <td class=" "></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class=" "></td></tr>
+                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                    <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                    <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                </table>
+                <ol class="moves"></ol>
+            </div>
+        </section>
+
+        <script>
+            let h = function(group, terms) {
+                let c = document.querySelector('#terms .content')
+                c.innerHTML += '<h4>' + group + '</h4>';
+                let table = c.appendChild(document.createElement('table'));
+                Object.values(terms).forEach(function(term) {
+                    if (term.ko) {
+                        table.innerHTML += '<tr class="' + term.name + '"><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '" /></td></tr>';
+                    }
+                });
+            };
+            h('Suunnat', directions);
+            h('Asennot', stances);
+            h('Torjunnat', blocks);
+            h('Lyönnit', punches);
+            h('Potkut', kicks);
+
+            window.onMoveOver = function(termName) {
+                document.querySelectorAll('#terms .selected').forEach(function(s) {
+                    s.classList.remove('selected');
+                });
+                let term = document.querySelector('#terms .' + termName);
+                if (term) {
+                    term.classList.add('selected');
+                    let iframe = document.querySelector('#terms .' + termName + ' iframe');
+                    iframe.setAttribute('src', iframe.getAttribute('data-src'));
+                }
+            };
+            let toHtml = function(x) {
+                return '<li title="' + x.ko + '" class="' + x.name.toLowerCase() + '" onmouseover="onMoveOver(\'' + x.name + '\')">' + x.fi + '</li>';
+            };
+
+            gichu.concat(taeguk).forEach(function(poomse) {
+                document.querySelector('#' + poomse.name + ' .moves').innerHTML = '<li>' + poomse.parts.map(function(p, i) {
+                    document.querySelector('#' + poomse.name + ' .pattern tr:nth-child(' + p.row + ') td:nth-child(' + p.col + ')').classList.add('order' + i);
+                    let clazz = '_' + p.row + '_' + p.col;
+                    let part = p.moves.map(toHtml).join('');
+                    return '<ul onmouseover="document.body.classList.add(\'' + clazz + '\')" onmouseout="document.body.classList.remove(\'' + clazz + '\')">' + (part == '' ? '<br />' : part) + '</ul>';
+                }).join('</li><li>') + '</li>';
+            });
+        </script>
+    </body>
+</html>
