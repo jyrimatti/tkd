@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TKD Poomse</title>
+        <title>TKD Forms</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="initial-scale=1.0, minimal-ui" />
         <meta name="apple-mobile-web-app-title" content="TKD Poomse" />
@@ -13,106 +13,131 @@
             ol > li { display: block; }
             ul { list-style-type: none; padding: 0.25em; padding-left: 1em; display: flex; }
             ul li { opacity: 0.75; display: inline; border: 1px dotted gray; padding: 0 0.5em; margin: 0 0.25em; border-radius: 0.25em; min-width: 11em; display: inline-block; flex-wrap: nowrap; }
+            ul li.kihap { min-width: 5em; }
+            ul li.prefix { min-width: 0; }
 
-            li.forward,
-            li.left_90,
-            li.right_90,
-            li.left_180,
-            li.right_180,
-            li.left_270,
-            li.right_270 {
+            .forward,
+            .left_45,
+            .right_45,
+            .left_90,
+            .right_90,
+            .left_180,
+            .right_180,
+            .left_270,
+            .right_270 {
                 background-color: transparent;
             }
             
-            li.joonbee {background-color: #ffffcc; }
-            li.left_walking_stance, li.right_walking_stance { background-color: #FFF6B3; }
-            li.left_front_stance, li.right_front_stance { background-color: #FFEF80; }
-            li.left_horse_stance, li.right_horse_stance { background-color: #FFE633; }
-            li.left_back_stance, li.right_back_stance { background-color: #ffd400; }
-            li.kihap { background-color: #e68a00; }
+            .joonbee { background-color: #ffffcc; }
+            .sparring_stance { background-color: magenta; }
+            .left_walking_stance, .right_walking_stance { background-color: #FFF6B3; }
+            .left_front_stance, .right_front_stance { background-color: #FFEF80; }
+            .left_horse_stance, .right_horse_stance { background-color: #FFE633; }
+            .left_back_stance, .right_back_stance { background-color: #ffd400; }
+            .kihap { background-color: #e68a00; }
             
-            li.left_low_block, li.right_low_block { background-color: #C8F4C1; }
-            li.left_inward_block, li.right_inward_block { background-color: #92E984; }
-            li.left_high_block, li.right_high_block { background-color: #5BDE46; }
-            li.left_outward_block, li.right_outward_block { background-color: #24D308; }
-            li.left_high_outward_block, li.right_high_outward_block { background-color: #189204; }
+            .left_low_block, .right_low_block { background-color: #C8F4C1; }
+            .left_inward_block, .right_inward_block { background-color: #92E984; }
+            .left_high_block, .right_high_block { background-color: #5BDE46; }
+            .left_outward_block, .right_outward_block { background-color: #24D308; }
+            .left_high_outward_block, .right_high_outward_block { background-color: #60A8EB; }
+            .left_double_knifehand_outward_block, .right_double_knifehand_outward_block { background-color: #189204; }
 
-            li.left_punch, li.right_punch { background-color: #BFDCF7; }
-            li.left_high_punch, li.right_high_punch { background-color: #60A8EB; }
-            li.left_side_punch, li.right_side_punch { background-color: #2085E3; }
+            .left_punch, .right_punch { background-color: #BFDCF7; }
+            .left_high_punch, .right_high_punch { background-color: #60A8EB; }
+            .left_side_punch, .right_side_punch { background-color: #2085E3; }
+            .left_swallowform_knifehand_strike, .right_swallowform_knifehand_strike { background-color: #0000ff; }
 
-            li.left_front_kick, li.right_front_kick { background-color: #ff8566; }
+            .left_front_kick, .right_front_kick, .left_jump_front_kick, .right_jump_front_kick { background-color: lightpink; }
+            .left_back_kick, .right_back_kick { background-color: salmon; }
+            .left_turning_kick, .right_turning_kick, .left_high_turning_instep_kick, .right_high_turning_instep_kick { background-color: #ff0000; }
 
-            ul li:hover { opacity: 1; }
+            ul :hover { opacity: 1; }
 
             .pattern { padding: 3em 0 3em 2em; }
             .pattern td { width: 2em; }
-            .pattern tr { height: 2em; }
+            .pattern tr   td > div { height: 2em; }
             .pattern td.t { width: 1em; }
-            .pattern tr.f { height: 1em; }
-            .pattern td.b { background-color: black; }
+            .pattern tr.t td > div { height: 1em; }
+            .pattern td > div { display: flex; }
+            .pattern td > div > div { flex-grow: 1; }
+            .pattern td > div > div:after { content: "\a0"; }
 
-            body._1_1 .pattern tr:nth-child(1) td:nth-child(1),
-            body._1_2 .pattern tr:nth-child(1) td:nth-child(2),
-            body._1_3 .pattern tr:nth-child(1) td:nth-child(3),
-            body._1_4 .pattern tr:nth-child(1) td:nth-child(4),
-            body._1_5 .pattern tr:nth-child(1) td:nth-child(5),
-            body._2_1 .pattern tr:nth-child(2) td:nth-child(1),
-            body._2_2 .pattern tr:nth-child(2) td:nth-child(2),
-            body._2_3 .pattern tr:nth-child(2) td:nth-child(3),
-            body._2_4 .pattern tr:nth-child(2) td:nth-child(4),
-            body._2_5 .pattern tr:nth-child(2) td:nth-child(5),
-            body._3_1 .pattern tr:nth-child(3) td:nth-child(1),
-            body._3_2 .pattern tr:nth-child(3) td:nth-child(2),
-            body._3_3 .pattern tr:nth-child(3) td:nth-child(3),
-            body._3_4 .pattern tr:nth-child(3) td:nth-child(4),
-            body._3_5 .pattern tr:nth-child(3) td:nth-child(5),
-            body._4_1 .pattern tr:nth-child(4) td:nth-child(1),
-            body._4_2 .pattern tr:nth-child(4) td:nth-child(2),
-            body._4_3 .pattern tr:nth-child(4) td:nth-child(3),
-            body._4_4 .pattern tr:nth-child(4) td:nth-child(4),
-            body._4_5 .pattern tr:nth-child(4) td:nth-child(5),
-            body._5_1 .pattern tr:nth-child(5) td:nth-child(1),
-            body._5_2 .pattern tr:nth-child(5) td:nth-child(2),
-            body._5_3 .pattern tr:nth-child(5) td:nth-child(3),
-            body._5_4 .pattern tr:nth-child(5) td:nth-child(4),
-            body._5_5 .pattern tr:nth-child(5) td:nth-child(5),
-            body._6_1 .pattern tr:nth-child(6) td:nth-child(1),
-            body._6_2 .pattern tr:nth-child(6) td:nth-child(2),
-            body._6_3 .pattern tr:nth-child(6) td:nth-child(3),
-            body._6_4 .pattern tr:nth-child(6) td:nth-child(4),
-            body._6_5 .pattern tr:nth-child(6) td:nth-child(5),
-            body._7_1 .pattern tr:nth-child(7) td:nth-child(1),
-            body._7_2 .pattern tr:nth-child(7) td:nth-child(2),
-            body._7_3 .pattern tr:nth-child(7) td:nth-child(3),
-            body._7_4 .pattern tr:nth-child(7) td:nth-child(4),
-            body._7_5 .pattern tr:nth-child(7) td:nth-child(5) {
-                background-color: blue;
-                opacity: 1;
+            body.order0 .pattern .order0,
+            body.order1 .pattern .order1,
+            body.order2 .pattern .order2,
+            body.order3 .pattern .order3,
+            body.order4 .pattern .order4,
+            body.order5 .pattern .order5,
+            body.order6 .pattern .order6,
+            body.order7 .pattern .order7,
+            body.order8 .pattern .order8,
+            body.order9 .pattern .order9,
+            body.order10 .pattern .order10,
+            body.order11 .pattern .order11,
+            body.order12 .pattern .order12,
+            body.order13 .pattern .order13,
+            body.order14 .pattern .order14,
+            body.order15 .pattern .order15,
+            body.order16 .pattern .order16,
+            body.order17 .pattern .order17,
+            body.order18 .pattern .order18,
+            body.order19 .pattern .order19,
+            body.order20 .pattern .order20,
+            body.order21 .pattern .order21,
+            body.order22 .pattern .order22,
+            body.order23 .pattern .order23,
+            body.order24 .pattern .order24,
+            body.order25 .pattern .order25,
+            body.order26 .pattern .order26,
+            body.order27 .pattern .order27,
+            body.order28 .pattern .order28,
+            body.order29 .pattern .order29,
+            body.order30 .pattern .order30,
+            body.order31 .pattern .order31 {
+                background-color: red;
             }
 
-            .order0  { opacity: 0.07; }
-            .order1  { opacity: 0.11; }
-            .order2  { opacity: 0.15; }
-            .order3  { opacity: 0.19; }
-            .order4  { opacity: 0.23; }
-            .order5  { opacity: 0.27; }
-            .order6  { opacity: 0.31; }
-            .order7  { opacity: 0.35; }
-            .order8  { opacity: 0.39; }
-            .order9  { opacity: 0.43; }
-            .order10 { opacity: 0.47; }
-            .order11 { opacity: 0.51; }
-            .order12 { opacity: 0.55; }
-            .order13 { opacity: 0.60; }
-            .order14 { opacity: 0.66; }
-            .order15 { opacity: 0.73; }
-            .order16 { opacity: 0.81; }
-            .order17 { opacity: 0.9; }
-            .order18 { opacity: 1; }
+            /* https://beta.observablehq.com/@shastabolicious/two-hue-sequential-color-scale */
+            .order0  { background-color: #eff4ea; }
+            .order1  { background-color: #e0ead7; }
+            .order2  { background-color: #d2e1c8; }
+            .order3  { background-color: #c5d8ba; }
+            .order4  { background-color: #b9d0af; }
+            .order5  { background-color: #aec8a5; }
+            .order6  { background-color: #a4c19e; }
+            .order7  { background-color: #9bba98; }
+            .order8  { background-color: #93b393; }
+            .order9  { background-color: #8bad8f; }
+            .order10 { background-color: #83a68c; }
+            .order11 { background-color: #7da08a; }
+            .order12 { background-color: #769b89; }
+            .order13 { background-color: #709588; }
+            .order14 { background-color: #6a8f87; }
+            .order15 { background-color: #658986; }
+            .order16 { background-color: #5f8486; }
+            .order17 { background-color: #597e85; }
+            .order18 { background-color: #547883; }
+            .order19 { background-color: #4e7281; }
+            .order20 { background-color: #496c7f; }
+            .order21 { background-color: #43657c; }
+            .order22 { background-color: #3e5e77; }
+            .order23 { background-color: #385772; }
+            .order24 { background-color: #33506c; }
+            .order25 { background-color: #2d4864; }
+            .order26 { background-color: #28405b; }
+            .order27 { background-color: #233750; }
+            .order28 { background-color: #1e2e44; }
+            .order29 { background-color: #1a2537; }
+            .order30 { background-color: #151c28; }
+            .order31 { background-color: #0e1119; }
 
-            body { margin: 0; height: 100%; display: flex; }
-            h3 {
+            .pattern .first { border: 1px solid black; border-radius: 2px; }
+
+            body { margin: 0; height: 100%; display: flex; background-color: white !important; }
+
+            h3,
+            h2 {
                 float: left;
                 padding: 0.6em;
                 margin-top: 0;
@@ -122,32 +147,63 @@
                 border-top-right-radius: 1em;
                 white-space: nowrap;
             }
-            section:hover h3 { background-color: lightgray; }
-            section.gichu h3 {
+            section:hover > h3,
+            section:hover > h2 { background-color: lightgray; }
+
+            .hanbon h3,
+            .hanbon h2 {
+                border-color: green;
+            }
+            .hanbon h3:hover,
+            .hanbon section:hover h3,
+            .hanbon h2:hover,
+            .hanbon:hover h2 { background-color: lightgreen; }
+
+            .sebon h3,
+            .sebon h2 {
+                border-color: gold;
+            }
+            .sebon h3:hover,
+            .sebon section:hover h3,
+            .sebon h2:hover,
+            .sebon:hover h2 { background-color: lightgoldenrodyellow; }
+
+            .gichu h3,
+            .gichu h2 {
                 border-color: blue;
             }
-            section.gichu h3:hover,
-            section.gichu:hover h3 { background-color: lightblue; }
-            section.taeguk h3 {
+            .gichu h3:hover,
+            .gichu section:hover h3,
+            .gichu h2:hover,
+            .gichu:hover h2 { background-color: lightblue; }
+
+            .taeguk h3,
+            .taeguk h2 {
                 border-color: red;
             }
-            section.taeguk h3:hover,
-            section.taeguk:hover h3 { background-color: lightpink; }
+            .taeguk h3:hover,
+            .taeguk section:hover h3,
+            .taeguk h2:hover,
+            .taeguk:hover h2 { background-color: lightpink; }
 
             section { flex-wrap: nowrap; }
-            section .content {
-                padding-left: 1em;
+            .content {
                 position: absolute;
-                top: 2.85em;
+                top: 3.65em;
                 left: 0;
                 display: none;
                 width: 100%;
                 height: 100%;
             }
-            section .content:hover,
-            section h3:hover + .content { display: block; }
+            .content .content {
+                top: 2.85em;
+            }
 
-            .content img {
+            .content:hover,
+            h3:hover + .content,
+            h2:hover + .content { display: block; }
+
+            img {
                 height: 15em;
                 left: 15em;
                 top: 1em;
@@ -155,46 +211,54 @@
                 border: 1px solid black;
                 border-radius: 1em;
             }
-            .content img:hover {
+            img:hover {
                 height: 95%;
                 z-index: 99;
             }
 
             #terms h4 { display: none; }
-            #terms .content .selected { display: flex; flex-direction: column; }
-            #terms .content .selected td { border: 1px solid gray; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; }
-            #terms .content .selected td:last-child { border: 0; }
+            #terms .selected { display: flex; flex-direction: column; }
+            #terms .selected td { border: 1px solid gray; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; }
+            #terms .selected td:last-child { border: 0; }
 
-            #terms .content td { overflow: hidden; min-width: 10em; }
-            #terms .content td iframe { display: none; height: 230em; width: 100%; margin-top: -18em; margin-left: 0.5em; }
-            #terms .content .selected iframe { display: block; }
+            #terms td { overflow: hidden; min-width: 10em; }
+            #terms iframe { display: none; height: 230em; width: 100%; margin-top: -18em; margin-left: 0.5em; }
+            #terms .selected iframe { display: block; }
 
             #terms h4 { margin: 1.5em 0 0.5em 0; }
-            #terms .content { width: 48em; margin-left: 1em; position: absolute; left: 43em; display: block; }
+            #terms .content { width: 48em; margin-left: 1em; position: absolute; left: 45em; display: block; }
             #terms td { border-bottom: 1px dotted gray; padding: 0.5em; padding-right: 0; }
             #terms tr:last-child td { border: 0; }
-            #terms .content table { width: 100%; }
-            #terms .content tr { display: none; white-space: nowrap; }
-            #terms:hover h4 { display: block; }
-            #terms:hover .content { height: 230em; width: 100%; left: 0; display: block; }
-            #terms:hover .content table { width: auto; }
-            #terms:hover .content tr { display: table-row; }
-            #terms:hover .content iframe { display: none; }
-            #terms:hover .content .selected td { border: 0; }
+            #terms table { width: 100%; }
+            #terms tr { display: none; white-space: nowrap; background-color: inherit; }
+            #terms { display: block; }
+            section:hover #terms h4 { display: block; }
+            section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
+            section:hover #terms table { width: auto; }
+            section:hover #terms tr { display: table-row; }
+            section:hover #terms iframe { display: none; }
+            section:hover #terms .selected td { border: 0; }
         </style>
         <style media="print">
             * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
             .print { display: unset !important; }
             body { display: unset; }
             iframe { display: none !important; }
+            .gichu section,
+            .taeguk section { page-break-before: always; }
             section .content,
             #terms .content { display: block !important; position: relative !important; top: unset !important; right: unset !important; left: unset !important; width: auto !important; height: auto !important; }
-            h3 { float: unset !important; background-color: initial !important; border-right: none !important; page-break-before: always; }
+            h2 { display: none !important; }
+            h3 { float: unset !important; background-color: initial !important; border-right: none !important; }
+            .hanbon { page-break-before: always; }
+            .hanbon section { page-break-inside: avoid; }
+            .sebon { page-break-before: always; }
             .taeguk .pattern { page-break-after: always; }
             img { height: unset !important; width: 95% !important; left: unset !important; top: unset !important; position: relative !important; }
+            #terms .content > div { page-break-inside: avoid; }
             #terms h4 { display: block !important; }
-            #terms .content tr { display: unset !important; }
-            #terms .content .selected td { border: none !important; }
+            #terms tr { display: table-row !important; }
+            #terms .selected td { border: none !important; }
             ol { padding-bottom: 0 !important; font-size: 1.2em; }
         </style>
         <script>
@@ -204,6 +268,11 @@
 
             window.directions = {
                 forward: move('forward', 'ap', 'eteenpäin', ''),
+                backward: move('backward', 'dwi', 'taaksepäin', ''),
+                left_45: move('left_45', '', 'vasemmalle 45°', ''),
+                right_45: move('right_45', '', 'oikealle 45°', ''),
+                left_backward_45: move('left_backward_45', '', 'vasemmalle taakse 45°', ''),
+                right_backward_45: move('right_backward_45', '', 'oikealle taakse 45°', ''),
                 left_90: move('left_90', '', 'vasemmalle 90°', ''),
                 right_90: move('right_90', '', 'oikealle 90°', ''),
                 left_180: move('left_180', '', 'vasemmalle 180°', ''),
@@ -214,6 +283,8 @@
             window.stances = {
                 kihap: move('kihap', 'kihap', 'huuto: kiai!', ''),
                 joonbee: move('joonbee', 'junbi', 'valmistaudu', ''),
+                left_sparring_stance: move('left_Sparring_Stance', '(wen) gyeorugi junbi', '(vasen) otteluasento', ''),
+                right_sparring_stance: move('right_Sparring_Stance', '(orun) gyeorugi junbi', '(oikea) otteluasento', ''),
                 left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', ''),
                 right_front_stance: move('right_Front_Stance', '(orun) ap kubi', '(oikea) pitkä perusaskel', ''),
                 left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', '(vasen) lyhyt perusaskel', ''),
@@ -228,12 +299,16 @@
                 right_low_block: move('right_Low_Block', '(orun) are maki', '(oikea) alatorjunta', ''),
                 left_inward_block: move('left_Inward_Block', '(wen) momtong maki', '(vasen) keskitorjunta', ''),
                 right_inward_block: move('right_Inward_Block', '(orun) momtong maki', '(oikea) keskitorjunta', ''),
+                left_outward_block: move('left_Outward_Block', '(wen) momtong bakat maki', '(vasen) keskitorjunta ulospäin', ''),
+                right_outward_block: move('right_Outward_Block', '(orun) momtong bakat maki', '(oikea) keskitorjunta ulospäin', ''),
                 left_high_block: move('left_High_Block', '(wen) olgul maki', '(vasen) ylätorjunta', ''),
                 right_high_block: move('right_High_Block', '(orun) olgul maki', '(oikea) ylätorjunta', ''),
                 left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakat maki', '(vasen) sisäranteella keskitorjunta ulospäin', ''),
                 right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakat maki', '(oikea) sisäranteella keskitorjunta ulospäin', ''),
                 left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakat maki', '(vasen) sisäranteella ylätorjunta ulospäin', ''),
-                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakat maki', '(oikea) sisäranteella ylätorjunta ulospäin', '')
+                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakat maki', '(oikea) sisäranteella ylätorjunta ulospäin', ''),
+                left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) sonnal momtong bakat maki', '(vasen) keskitorjunta kahdella kämmensyrjällä', ''),
+                right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) sonnal momtong bakat maki', '(oikea) keskitorjunta kahdella kämmensyrjällä', '')
                 
             };
             window.punches = {
@@ -242,11 +317,21 @@
                 left_high_punch: move('left_High_Punch', '(wen) olgul jirugi', '(vasen) ylälyönti', ''),
                 right_high_punch: move('right_High_Punch', '(orun) olgul jirugi', '(oikea) ylälyönti', ''),
                 left_side_punch: move('left_Side_Punch', '(wen) yop jirugi', '(vasen) sivulyönti', ''),
-                right_side_punch: move('right_Side_Punch', '(orun) yop jirugi', '(oikea) sivulyönti', '')
+                right_side_punch: move('right_Side_Punch', '(orun) yop jirugi', '(oikea) sivulyönti', ''),
+                left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', ''),
+                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '')
             };
             window.kicks = {
                 left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', ''),
-                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', '')
+                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', ''),
+                left_jump_front_kick: move('left_Jump_Front_Kick', '(wen) twio ap chagi', '(vasen) hyppyetupotku', ''),
+                right_jump_front_kick: move('right_Jump_Front_Kick', '(orun) twio ap chagi', '(oikea) hyppyetupotku', ''),
+                left_back_kick: move('left_Back_Kick', '(wen) dwi chagi', '(vasen) takapotku', ''),
+                right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', '(oikea) takapotku', ''),
+                left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', ''),
+                right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', ''),
+                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', ''),
+                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '')
             };
 
             var part = function(row, col, moves) {
@@ -255,6 +340,58 @@
 
             let terms = Object.assign({}, directions, stances, blocks, punches, kicks);
             with (terms) {
+                window.hanbon1 = {
+                    name: 'hanbon1',
+                    parts: [
+                        part(2, 2, [joonbee]),
+                        part(1, 1, [left_45, left_horse_stance, left_inward_block]),
+                        part(1, 1, [right_punch, left_high_punch])
+                ]};
+                window.hanbon2 = {
+                    name: 'hanbon2',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [backward, left_walking_stance, left_inward_block]),
+                        part(1, 1, [left_45, left_front_stance, right_punch])
+                ]};
+                window.hanbon3 = {
+                    name: 'hanbon3',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(1, 2, [right_front_kick]),
+                        part(1, 2, [left_sparring_stance])
+                ]};
+                window.hanbon4 = {
+                    name: 'hanbon4',
+                    parts: [
+                        part(2, 2, [joonbee]),
+                        part(1, 3, [right_45, right_horse_stance, left_outward_block, right_punch])
+                ]};
+                window.hanbon5 = {
+                    name: 'hanbon5',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 3, [right_backward_45, left_sparring_stance, left_front_kick]),
+                        part(2, 3, [right_high_turning_instep_kick]),
+                        part(2, 3, [left_sparring_stance])
+                ]};
+                window.hanbon6 = {
+                    name: 'hanbon6',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 3, [right_backward_45, left_sparring_stance, right_jump_front_kick]),
+                        part(2, 3, [right_sparring_stance])
+                ]};
+
+                window.sebon1 = {
+                    name: 'sebon1',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [right_back_stance, left_double_knifehand_outward_block]),
+                        part(3, 2, [left_back_stance, right_double_knifehand_outward_block]),
+                        part(3, 3, [right_horse_stance, right_swallowform_knifehand_strike])
+                ]};
+
                 window.gichu1 = {
                     name: 'gichu1',
                     parts: [
@@ -267,8 +404,7 @@
                         part(4, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_front_stance, right_punch]),
                         part(2, 3, [forward, left_front_stance, left_punch]),
-                        part(1, 3, [forward, right_front_stance, right_punch]),
-                        part(1, 3, [kihap]),
+                        part(1, 3, [forward, right_front_stance, right_punch, kihap]),
                         part(1, 3, []),
                         part(1, 4, [left_270, left_front_stance, left_low_block]),
                         part(1, 5, [forward, right_front_stance, right_punch]),
@@ -278,8 +414,7 @@
                         part(2, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_front_stance, right_punch]),
                         part(4, 3, [forward, left_front_stance, left_punch]),
-                        part(5, 3, [forward, right_front_stance, right_punch]),
-                        part(5, 3, [kihap]),
+                        part(5, 3, [forward, right_front_stance, right_punch, kihap]),
                         part(5, 3, []),
                         part(5, 2, [left_270, left_front_stance, left_low_block]),
                         part(5, 1, [forward, right_front_stance, right_punch]),
@@ -298,8 +433,7 @@
                         part(4, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_front_stance, right_high_block]),
                         part(2, 3, [forward, left_front_stance, left_high_block]),
-                        part(1, 3, [forward, right_front_stance, right_high_block]),
-                        part(1, 3, [kihap]),
+                        part(1, 3, [forward, right_front_stance, right_high_block, kihap]),
                         part(1, 3, []),
                         part(1, 4, [left_270, left_front_stance, left_low_block]),
                         part(1, 5, [forward, right_front_stance, right_high_punch]),
@@ -309,8 +443,7 @@
                         part(2, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_front_stance, right_high_block]),
                         part(4, 3, [forward, left_front_stance, left_high_block]),
-                        part(5, 3, [forward, right_front_stance, right_high_block]),
-                        part(5, 3, [kihap]),
+                        part(5, 3, [forward, right_front_stance, right_high_block, kihap]),
                         part(5, 3, []),
                         part(5, 2, [left_270, left_front_stance, left_low_block]),
                         part(5, 1, [forward, right_front_stance, right_high_punch]),
@@ -322,31 +455,29 @@
                     parts: [
                         part(5, 3, [joonbee]),
                         part(5, 2, [left_90, right_back_stance, left_inner_forearm_outward_block]),
-                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
-                        part(5, 5, [forward, left_front_stance, left_high_punch]),
+                        part(5, 5, [forward, left_front_stance, left_punch]),
                         part(4, 3, []),
                         part(4, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_horse_stance, right_side_punch]),
                         part(2, 3, [forward, left_horse_stance, left_side_punch]),
-                        part(1, 3, [forward, right_horse_stance, right_side_punch]),
-                        part(1, 3, [kihap]),
+                        part(1, 3, [forward, right_horse_stance, right_side_punch, kihap]),
                         part(1, 3, []),
                         part(1, 4, [left_270, right_back_stance, left_inner_forearm_outward_block]),
-                        part(1, 5, [forward, right_front_stance, right_high_punch]),
+                        part(1, 5, [forward, right_front_stance, right_punch]),
                         part(1, 2, [right_180, left_back_stance, right_inner_forearm_outward_block]),
-                        part(1, 1, [forward, left_front_stance, left_high_punch]),
+                        part(1, 1, [forward, left_front_stance, left_punch]),
                         part(1, 3, []),
                         part(2, 3, [left_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_horse_stance, right_side_punch]),
                         part(4, 3, [forward, left_horse_stance, left_side_punch]),
-                        part(5, 3, [forward, right_horse_stance, right_side_punch]),
-                        part(5, 3, [kihap]),
+                        part(5, 3, [forward, right_horse_stance, right_side_punch, kihap]),
                         part(5, 3, []),
                         part(5, 2, [left_270, right_back_stance, left_inner_forearm_outward_block]),
-                        part(5, 1, [forward, right_front_stance, right_high_punch]),
+                        part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
-                        part(5, 5, [forward, left_front_stance, left_high_punch])
+                        part(5, 5, [forward, left_front_stance, left_punch])
                 ]};
 
                 window.taeguk1 = {
@@ -370,13 +501,12 @@
                         part(2, 3, [left_punch]),
                         part(2, 3, []),
                         part(1, 2, [left_90, left_walking_stance, left_high_block]),
-                        part(1, 1, [right_front_kick, right_punch]),
+                        part(1, 1, [right_front_kick, right_walking_stance, right_punch]),
                         part(1, 4, [right_180, right_walking_stance, right_high_block]),
-                        part(1, 5, [left_front_kick, left_punch]),
+                        part(1, 5, [left_front_kick, left_walking_stance, left_punch]),
                         part(2, 3, []),
                         part(2, 3, [right_90, left_front_stance, left_low_block]),
-                        part(3, 3, [forward, right_front_stance, right_punch]),
-                        part(3, 3, [kihap])
+                        part(3, 3, [forward, right_front_stance, right_punch, kihap])
                 ]};
 
                 window.taeguk2 = {
@@ -390,7 +520,7 @@
                         part(7, 5, []),
                         part(6, 3, [left_90, left_walking_stance, right_inward_block]),
                         part(5, 3, [forward, right_walking_stance, left_inward_block]),
-                        part(5, 5, []),
+                        part(5, 3, []),
                         part(4, 2, [left_90, left_walking_stance, left_low_block]),
                         part(4, 1, [right_front_kick, right_front_stance, right_high_punch]),
                         part(4, 4, [right_180, right_walking_stance, right_low_block]),
@@ -402,118 +532,226 @@
                         part(1, 4, [left_270, left_walking_stance, right_inward_block]),
                         part(1, 2, [right_180, right_walking_stance, left_inward_block]),
                         part(1, 2, []),
-                        part(1, 3, [left_90, left_walking_stance, left_low_block]),
-                        part(2, 3, [right_front_kick, right_walking_stance, right_punch]),
-                        part(3, 3, [left_front_kick, left_walking_stance, left_punch]),
-                        part(4, 3, [right_front_kick, right_walking_stance, right_punch]),
-                        part(4, 3, [kihap])
+                        part(2, 3, [left_90, left_walking_stance, left_low_block]),
+                        part(3, 3, [right_front_kick, right_walking_stance, right_punch]),
+                        part(4, 3, [left_front_kick, left_walking_stance, left_punch]),
+                        part(5, 3, [right_front_kick, right_walking_stance, right_punch, kihap])
                 ]};
 
+                window.hanbon = [hanbon1, hanbon2, hanbon3, hanbon4, hanbon5, hanbon6];
+                window.sebon = [sebon1];
                 window.gichu = [gichu1, gichu2, gichu3];
                 window.taeguk = [taeguk1, taeguk2];
             };
         </script>
     </head>
     <body>
-        <section id="terms">
-            <h3 onclick="">Terms</h3>
-            <div class="content">
-                <br />
+        <section>
+            <h2>Terms</h2>
+            <div class="content" id="terms">
+                <section>
+                    <div class="content">
+                    </div>
+                </section>
             </div>
         </section>
 
-        <section class="gichu" id="gichu1">
-            <h3 onclick="">GI CHU IL (1.) PU</h3>
+        <section class="hanbon">
+            <h2>HAN BON</h2>
             <div class="content">
-                <table class="pattern">
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                </table>
-                <ol class="moves"></ol>
-                <br />
+                <section id="hanbon1">
+                    <h3 onclick=""><span class="print">HAN BON </span>IL (1.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="hanbon2">
+                    <h3 onclick=""><span class="print">HAN BON </span>I (2.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr          ><td class="b"></td><td class="b"></td><td class=" "></td></tr>
+                            <tr class="t"><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="hanbon3">
+                    <h3 onclick=""><span class="print">HAN BON </span>SAM (3.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="hanbon4">
+                    <h3 onclick=""><span class="print">HAN BON </span>SA (4.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="hanbon5">
+                    <h3 onclick=""><span class="print">HAN BON </span>O (5.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="hanbon6">
+                    <h3 onclick=""><span class="print">HAN BON </span>YUK (6.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                                <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                                <tr><td class=" "></td><td class=" "></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
             </div>
         </section>
 
-        <section class="gichu" id="gichu2">
-            <h3 onclick=""><span class="print">GI CHU </span>I (2.) PU</h3>
+        <section class="sebon">
+            <h2>SE BON</h2>
             <div class="content">
-                <table class="pattern">
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                </table>
-                <ol class="moves"></ol>
-                <br />
-            </div>
-        </section>
-        <section class="gichu" id="gichu3">
-            <h3 onclick=""><span class="print">GI CHU </span>SAM (3.) PU</h3>
-            <div class="content">
-                <table class="pattern">
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
-                    <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
-                </table>
-                <ol class="moves"></ol>
-                <br />
+                <section id="sebon1">
+                    <h3 onclick=""><span class="print">SE BON </span>IL (1.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
             </div>
         </section>
 
-        <section class="taeguk" id="taeguk1">
-            <h3 onclick="">TAEGUK IL (1.) JANG</h3>
+        <section class="gichu">
+            <h2>GI CHU</h2>
             <div class="content">
-                <img src="https://vignette.wikia.nocookie.net/taekwondo/images/5/52/PoomsaeT1_3D.png/revision/latest/scale-to-width-down/1024?cb=20180524214834" />
-                <table class="pattern">
-                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
-                    <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
-                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
-                    <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
-                    <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
-                </table>
-                <ol class="moves"></ol>
-                <br />
+                <section id="gichu1">
+                    <h3 onclick=""><span class="print">GI CHU </span>IL (1.) PU</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="gichu2">
+                    <h3 onclick=""><span class="print">GI CHU </span>I (2.) PU</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="gichu3">
+                    <h3 onclick=""><span class="print">GI CHU </span>SAM (3.) PU</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class="b"></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
             </div>
         </section>
 
-        <section class="taeguk" id="taeguk2">
-            <h3 onclick=""><span class="print">TAEGUK </span>I (2.) JANG</h3>
+        <section class="taeguk">
+            <h2>TAEGUK</h2>
             <div class="content">
-                <img src="https://vignette.wikia.nocookie.net/taekwondo/images/9/9a/PoomsaeT2_3D.png/revision/latest/scale-to-width-down/1024?cb=20170329215102" />
-                <table class="pattern">
-                    <tr>          <td class=" "></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class=" "></td></tr>
-                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                    <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
-                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                    <tr class="f"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                    <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
-                </table>
-                <ol class="moves"></ol>
+                <section id="taeguk1">
+                    <h3 onclick=""><span class="print">TAEGUK </span>IL (1.) JANG</h3>
+                    <div class="content">
+                        <img src="https://vignette.wikia.nocookie.net/taekwondo/images/5/52/PoomsaeT1_3D.png/revision/latest/scale-to-width-down/1024?cb=20180524214834" />
+                        <table class="pattern">
+                            <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                            <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
+                            <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                            <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
+                            <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="taeguk2">
+                    <h3 onclick=""><span class="print">TAEGUK </span>I (2.) JANG</h3>
+                    <div class="content">
+                        <img src="https://vignette.wikia.nocookie.net/taekwondo/images/9/9a/PoomsaeT2_3D.png/revision/latest/scale-to-width-down/1024?cb=20170329215102" />
+                        <table class="pattern">
+                            <tr>          <td class=" "></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class=" "></td></tr>
+                            <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                            <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr>          <td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                    </div>
+                </section>
             </div>
         </section>
 
         <script>
             let h = function(group, terms) {
                 let c = document.querySelector('#terms .content')
-                c.innerHTML += '<h4>' + group + '</h4>';
-                let table = c.appendChild(document.createElement('table'));
-                Object.values(terms).forEach(function(term) {
-                    if (term.ko) {
-                        table.innerHTML += '<tr class="' + term.name + '"><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '" /></td></tr>';
-                    }
-                });
+                let d = c.appendChild(document.createElement('div'));
+                d.innerHTML += '<h4>' + group + '</h4>';
+                let table = d.appendChild(document.createElement('table'));
+                table.innerHTML = Object.values(terms).map(function(term) {
+                    return !term.ko ? '' : '<tr class="' + term.name + '"><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
+                }).join(' ');
             };
             h('Suunnat', directions);
             h('Asennot', stances);
             h('Torjunnat', blocks);
-            h('Lyönnit', punches);
+            h('Iskut', punches);
             h('Potkut', kicks);
 
             window.onMoveOver = function(termName) {
@@ -531,13 +769,27 @@
                 return '<li title="' + x.ko + '" class="' + x.name.toLowerCase() + '" onmouseover="onMoveOver(\'' + x.name + '\')">' + x.fi + '</li>';
             };
 
-            gichu.concat(taeguk).forEach(function(poomse) {
-                document.querySelector('#' + poomse.name + ' .moves').innerHTML = '<li>' + poomse.parts.map(function(p, i) {
-                    document.querySelector('#' + poomse.name + ' .pattern tr:nth-child(' + p.row + ') td:nth-child(' + p.col + ')').classList.add('order' + i);
-                    let clazz = '_' + p.row + '_' + p.col;
-                    let part = p.moves.map(toHtml).join('');
-                    return '<ul onmouseover="document.body.classList.add(\'' + clazz + '\')" onmouseout="document.body.classList.remove(\'' + clazz + '\')">' + (part == '' ? '<br />' : part) + '</ul>';
-                }).join('</li><li>') + '</li>';
+            hanbon.concat(sebon).concat(gichu).concat(taeguk).forEach(function(form) {
+                document.querySelector('#' + form.name + ' .moves').innerHTML = form.parts.map(function(p, i) {
+                    if (p.moves.length == 0) {
+                        return "<ul><br /></ul>";
+                    } else {
+                        var pat = document.querySelector('#' + form.name + ' .pattern tr:nth-child(' + p.row + ') td:nth-child(' + p.col + ')');
+                        if (i == 0) {
+                            pat.classList.add('first');
+                        }
+                        if (pat.childElementCount == 0) {
+                            pat = pat.appendChild(document.createElement('div'));
+                        } else {
+                            pat = pat.childNodes[0];
+                        }
+                        pat.appendChild(document.createElement('div')).classList.add('order' + i);
+
+                        let clazz = 'order' + i;
+                        let part = p.moves.map(toHtml).join('');
+                        return '<li><ul onmouseover="document.body.classList.add(\'' + clazz + '\')" onmouseout="document.body.classList.remove(\'' + clazz + '\')">' + (part == '' ? '<br />' : '<li class="prefix ' + clazz + '" ></li>' + part) + '</ul></li>';
+                    }
+                }).join('');
             });
         </script>
     </body>
