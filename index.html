@@ -14,7 +14,7 @@
             ul { list-style-type: none; padding: 0.25em; padding-left: 1em; display: flex; }
             ul li { opacity: 0.75; display: inline; border: 1px dotted gray; padding: 0 0.5em; margin: 0 0.25em; border-radius: 0.25em; min-width: 11em; display: inline-block; flex-wrap: nowrap; }
             ul li.kihap { min-width: 5em; }
-            ul li.prefix { min-width: 0; }
+            ul li.prefix { min-width: 0; padding-left: 0; }
 
             .forward,
             .left_45,
@@ -29,7 +29,7 @@
             }
             
             /* https://gka.github.io/palettes/ */
-            .joonbee { background-color: #ffffe0; }
+            .junbi { background-color: #ffffe0; }
             .left_sparring_stance, .right_sparring_stance { background-color: #fff5cc; }
             .left_walking_stance, .right_walking_stance { background-color: #ffedb9; }
             .left_front_stance, .right_front_stance { background-color: #ffe2a5; }
@@ -234,6 +234,7 @@
             #terms td { overflow: hidden; min-width: 10em; }
             #terms iframe { display: none; height: 230em; width: 100%; margin-top: -18em; margin-left: 0.5em; }
             #terms .selected iframe { display: block; }
+            #terms .translate { display: none; }
 
             #terms h4 { margin: 1.5em 0 0.5em 0; }
             #terms .content { width: 48em; margin-left: 1em; position: absolute; left: 45em; display: block; }
@@ -245,6 +246,7 @@
             section:hover #terms h4 { display: block; }
             section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
             section:hover #terms td { width: 30%; }
+            section:hover #terms .translate { display: table-cell; width: 10%; min-width: 10%; }
             section:hover #terms tr { display: table-row; }
             section:hover #terms iframe { display: none; }
             section:hover #terms .selected td { border: 0; }
@@ -259,26 +261,48 @@
             section .content,
             #terms .content { display: block !important; position: relative !important; top: unset !important; right: unset !important; left: unset !important; width: auto !important; height: auto !important; }
             h2 { display: none !important; }
-            h3 { float: unset !important; background-color: initial !important; border-right: none !important; }
-            .hanbon { page-break-before: always; }
-            .hanbon section { page-break-inside: avoid; }
+            h3 { float: unset !important; background-color: initial !important; border-right: none !important; clear: both; padding-bottom: 0; }
+            .hanbon,
             .sebon { page-break-before: always; }
+            .hanbon section,
+            .sebon section { page-break-inside: avoid; }
+            .hanbon .pattern,
+            .sebon .pattern { float: left; padding-top: 0; padding-left: 0; }
             .taeguk .pattern { page-break-after: always; }
             img { height: unset !important; width: 95% !important; left: unset !important; top: unset !important; position: relative !important; }
             #terms .content > div { page-break-inside: avoid; }
             #terms h4 { display: block !important; }
             #terms tr { display: table-row !important; }
+            #terms .translate { display: none !important; }
             #terms .selected td { border: none !important; }
             ol { padding-bottom: 0 !important; font-size: 1.2em; }
         </style>
         <script>
-            var move = function(name, ko, fi, en) {
-                return { name: name, ko: ko, fi: fi, en: en };
+            var move = function(name, ko, fi, en, translate) {
+                return { name: name, ko: ko, fi: fi, en: en, translate: translate };
             };
 
             window.directions = {
-                forward: move('forward', 'ap', 'eteenpäin', 'forward'),
-                backward: move('backward', 'dwi', 'taaksepäin', 'backward'),
+                forward: move('forward', 'ap', 'eteenpäin', 'forward', 'https://translate.google.com/#ko/en/앞'),
+                backward: move('backward', 'dwi', 'taaksepäin', 'backward', 'https://translate.google.com/#ko/en/뒤'),
+                upward: move('upward', 'ollyeo', 'ylöspäin', 'upward', 'https://translate.google.com/#ko/en/올려'),
+                downward: move('downward', 'nae-ryeo', 'alaspäin', 'downward', 'https://translate.google.com/#ko/en/내려'),
+                high: move('high', 'olgul', 'ylös', 'high', 'https://translate.google.com/#ko/en/얼굴'),
+                middle: move('middle', 'momtong', 'keskelle', 'middle', 'https://translate.google.com/#ko/en/몸통'),
+                low: move('low', 'arae', 'alas', 'low', 'https://translate.google.com/#ko/en/아래'),
+                left: move('left', 'wen', 'vasemmalle', 'left', 'https://translate.google.com/#ko/en/왼'),
+                right: move('right', 'orun', 'oikealle', 'right', 'https://translate.google.com/#ko/en/오른'),
+                side: move('side', 'yeop', 'sivulle', 'side', 'https://translate.google.com/#ko/en/옆'),
+                opposite: move('opposite', 'bandae', 'vastapuoli', 'opposite', 'https://translate.google.com/#ko/en/반대'),
+                inner: move('inner', 'an', 'sisä', 'inner', 'https://translate.google.com/#ko/en/안'),
+                inward: move('inward', 'anuro', 'sisäänpäin', 'inward', 'https://translate.google.com/#ko/en/안으로'),
+                outer: move('outer', 'bakkat', 'ulko', 'outer', 'https://translate.google.com/#ko/en/밖앗'),
+                outward: move('outward', 'bakkeuro', 'ulopäin', 'outward', 'https://translate.google.com/#ko/en/밖으로'),
+                twisting: move('twisting', 'bitureo', 'kääntävä', 'twisting', 'https://translate.google.com/#ko/en/비틀어'),
+                assisted: move('assisted', 'kodureo', 'avustava', 'assisted', 'https://translate.google.com/#ko/en/거들어'),
+                twohanded: move('twohanded', 'yangsonal', 'kaksikätinen', 'two-handed', 'https://translate.google.com/#ko/en/양손날'),
+                turning: move('turning', 'dollyeo', 'kiertävä', 'turning', 'https://translate.google.com/#ko/en/돌려'),
+                jumping: move('jumping', 'ttwieo', 'hyppy', 'jumping', 'https://translate.google.com/#ko/en/뛰어'),
                 left_45: move('left_45', '', 'vasemmalle 45°', 'left 45°'),
                 right_45: move('right_45', '', 'oikealle 45°', 'right 45°'),
                 left_backward_45: move('left_backward_45', '', 'vasemmalle taakse 45°', 'left backward 45°'),
@@ -290,9 +314,25 @@
                 left_270: move('left_270', '', 'vasemmalle 270°', 'left 270°'),
                 right_270: move('right_270', '', 'oikealle 270°', 'right 270°')
             };
+            window.body = {
+                foot: move('foot', 'baal', 'jalka', 'foot', 'https://translate.google.com/#ko/en/발'),
+                hand: move('hand', 'sohn', 'käsi', 'hand', 'https://translate.google.com/#ko/en/손'),
+                fist: move('fist', 'jumeok', 'nyrkki', 'fist', 'https://translate.google.com/#ko/en/주먹'),
+                elbow: move('elbow', 'palkeop', 'kyynärpää', 'elbow', 'https://translate.google.com/#ko/en/발겁'),
+                neck: move('neck', 'mok', 'niska', 'neck', 'https://translate.google.com/#ko/en/목'),
+                wrist: move('wrist', 'palmok', 'ranne', 'wrist', 'https://translate.google.com/#ko/en/팔목'),
+                ball: move('ball', 'ap chuk', 'päkiä', 'ball of the foot', 'https://translate.google.com/#ko/en/앞축')
+            };
+            window.commands = {
+                attention: move('attention', 'charyeot', 'huomio', 'attention', 'https://translate.google.com/#ko/en/차렷'),
+                junbi: move('junbi', 'junbi', 'valmistaudu', 'get ready', 'https://translate.google.com/#ko/en/준비'),
+                begin: move('begin', 'sijak', 'aloita', 'begin', 'https://translate.google.com/#ko/en/시작'),
+                stop: move('stop', 'geuman', 'lopeta', 'stop', 'https://translate.google.com/#ko/en/그만'),
+                return: move('return', 'baro', 'paluu valmiusasentoon', 'return to starting position', 'https://translate.google.com/#ko/en/바로'),
+                bow: move('bow', 'kyung-nyeh', 'kumarrus', 'bow', 'https://translate.google.com/#ko/en/경례'),
+                kihap: move('kihap', 'kihap', 'huuto!', 'yell!', 'https://translate.google.com/#ko/en/기합')
+            };
             window.stances = {
-                kihap: move('kihap', 'kihap', 'huuto!', 'yell!'),
-                joonbee: move('joonbee', 'junbi', 'valmistaudu', 'get ready'),
                 left_sparring_stance: move('left_Sparring_Stance', '(wen) gyorugi junbi', '(vasen) otteluasento', '(left) sparring stance'),
                 right_sparring_stance: move('right_Sparring_Stance', '(orun) gyorugi junbi', '(oikea) otteluasento', '(right) sparring stance'),
                 left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', '(left) front stance'),
@@ -349,8 +389,8 @@
                 right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', '(oikea) takapotku', '(right) back kick'),
                 left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', '(left) turning kick'),
                 right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', '(right) turning kick'),
-                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', '(left) high turning instep kick'),
-                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '(right) high turning instep kick'),
+                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baaldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', '(left) high turning instep kick'),
+                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baaldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '(right) high turning instep kick'),
                 left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', '(vasen) sivupotku', '(left) side kick'),
                 right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', '(oikea) sivupotku', '(right) side kick'),
                 left_rear_whip_kick: move('left_Whip_Kick', '(wen) dwi huryeo chagi', '(vasen) takaruoskapotku', '(left) rear whip kick'),
@@ -361,13 +401,13 @@
                 return { row: row, col: col, moves: moves };
             }
 
-            let terms = Object.assign({}, directions, stances, blocks, punches, kicks);
+            let terms = Object.assign({}, directions, body, commands, stances, blocks, punches, kicks);
             with (terms) {
                 window.hanbon = [
                 {
                     name: 'hanbon1',
                     parts: [
-                        part(2, 2, [joonbee]),
+                        part(2, 2, [junbi]),
                         part(1, 1, [left_45, left_horse_stance, left_inward_block]),
                         part(1, 1, [right_punch, left_high_punch])
                     ]
@@ -375,7 +415,7 @@
                 {
                     name: 'hanbon2',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [backward, left_walking_stance, left_inward_block]),
                         part(1, 1, [left_45, left_front_stance, right_punch])
                     ]
@@ -383,7 +423,7 @@
                 {
                     name: 'hanbon3',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(1, 2, [right_front_kick]),
                         part(1, 2, [left_sparring_stance])
                     ]
@@ -391,14 +431,14 @@
                 {
                     name: 'hanbon4',
                     parts: [
-                        part(2, 2, [joonbee]),
+                        part(2, 2, [junbi]),
                         part(1, 3, [right_45, right_horse_stance, left_outward_block, right_punch])
                     ]
                 },
                 {
                     name: 'hanbon5',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 3, [right_backward_45, left_sparring_stance, left_front_kick]),
                         part(2, 3, [right_high_turning_instep_kick]),
                         part(2, 3, [left_sparring_stance])
@@ -407,7 +447,7 @@
                 {
                     name: 'hanbon6',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 3, [right_backward_45, left_sparring_stance, right_jump_front_kick]),
                         part(2, 3, [right_sparring_stance])
                     ]
@@ -417,7 +457,7 @@
                 {
                     name: 'sebon1',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [right_back_stance, left_double_knifehand_outward_block]),
                         part(3, 2, [left_back_stance, right_double_knifehand_outward_block]),
                         part(3, 3, [right_horse_stance, right_swallowform_knifehand_strike])
@@ -426,7 +466,7 @@
                 {
                     name: 'sebon2',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [left_back_stance, right_inward_block]),
                         part(3, 2, [right_back_stance, left_inward_block]),
                         part(4, 2, [left_back_stance, right_inward_block]),
@@ -436,7 +476,7 @@
                 {
                     name: 'sebon3',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [left_back_stance, right_knifehand_outward_block]),
                         part(3, 2, [right_back_stance, left_knifehand_outward_block]),
                         part(4, 2, [left_back_stance, right_knifehand_outward_block]),
@@ -446,7 +486,7 @@
                 {
                     name: 'sebon4',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [left_back_stance, right_inward_block]),
                         part(3, 2, [right_back_stance, left_inward_block]),
                         part(4, 2, [left_back_stance, right_inward_block]),
@@ -457,7 +497,7 @@
                 {
                     name: 'sebon5',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [left_back_stance, right_double_knifehand_outward_block]),
                         part(3, 2, [right_back_stance, left_double_knifehand_outward_block]),
                         part(4, 2, [left_back_stance, right_double_knifehand_outward_block]),
@@ -467,7 +507,7 @@
                 {
                     name: 'sebon6',
                     parts: [
-                        part(1, 2, [joonbee]),
+                        part(1, 2, [junbi]),
                         part(2, 2, [right_back_stance, left_palmheel_pressing_block]),
                         part(3, 2, [left_back_stance, right_palmheel_pressing_block]),
                         part(4, 2, [right_back_stance, left_palmheel_pressing_block]),
@@ -479,7 +519,7 @@
                 {
                     name: 'gichu1',
                     parts: [
-                        part(5, 3, [joonbee]),
+                        part(5, 3, [junbi]),
                         part(5, 2, [left_90, left_front_stance, left_low_block]),
                         part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, right_front_stance, right_low_block]),
@@ -509,7 +549,7 @@
                 {
                     name: 'gichu2',
                     parts: [
-                        part(5, 3, [joonbee]),
+                        part(5, 3, [junbi]),
                         part(5, 2, [left_90, left_front_stance, left_low_block]),
                         part(5, 1, [forward, right_front_stance, right_high_punch]),
                         part(5, 4, [right_180, right_front_stance, right_low_block]),
@@ -539,7 +579,7 @@
                 {
                     name: 'gichu3',
                     parts: [
-                        part(5, 3, [joonbee]),
+                        part(5, 3, [junbi]),
                         part(5, 2, [left_90, right_back_stance, left_inner_forearm_outward_block]),
                         part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
@@ -571,7 +611,7 @@
                 {
                     name: 'taeguk1',
                     parts: [
-                        part(5, 3, [joonbee]),
+                        part(5, 3, [junbi]),
                         part(5, 2, [left_90, left_walking_stance, left_low_block]),
                         part(5, 1, [forward, right_walking_stance, right_punch]),
                         part(5, 4, [right_180, right_walking_stance, right_low_block]),
@@ -600,7 +640,7 @@
                 {
                     name: 'taeguk2',
                     parts: [
-                        part(7, 3, [joonbee]),
+                        part(7, 3, [junbi]),
                         part(7, 2, [left_90, left_walking_stance, left_low_block]),
                         part(7, 1, [forward, right_front_stance, right_punch]),
                         part(7, 4, [right_180, right_walking_stance, right_low_block]),
@@ -671,7 +711,7 @@
                     <h3 onclick=""><span class="print">HAN BON </span>SAM (3.)</h3>
                     <div class="content">
                         <table class="pattern">
-                            <tr><td class=" "></td><td class="b"></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
                         </table>
                         <ol class="moves"></ol>
                         <br />
@@ -899,10 +939,11 @@
                 d.innerHTML += '<h4>' + group + '</h4>';
                 let table = d.appendChild(document.createElement('table'));
                 table.innerHTML = Object.values(terms).map(function(term) {
-                    return !term.ko ? '' : '<tr class="' + term.name + '"><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
+                    return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
                 }).join(' ');
             };
             h('Suunnat', directions);
+            h('Kehonosat', body);
             h('Asennot', stances);
             h('Torjunnat', blocks);
             h('Iskut', punches);
