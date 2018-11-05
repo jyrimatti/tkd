@@ -292,7 +292,9 @@
                 left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', '(vasen) hevosseisonta', ''),
                 right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', '(oikea) hevosseisonta', ''),
                 left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', '(vasen takana) takaseisonta', ''),
-                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', '')
+                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', ''),
+                left_rear_cross_stance: move('left_Rear_Cross_Stance', '(left) dwi koa sogi', '(vasen) takaristiseisonta', ''),
+                right_rear_cross_stance: move('right_Rear_Cross_Stance', '(right) dwi koa sogi', '(oikea) takaristiseisonta', '')
             };
             window.blocks = {
                 left_low_block: move('left_Low_Block', '(wen) are maki', '(vasen) alatorjunta', ''),
@@ -307,6 +309,8 @@
                 right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakat maki', '(oikea) sisäranteella keskitorjunta ulospäin', ''),
                 left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakat maki', '(vasen) sisäranteella ylätorjunta ulospäin', ''),
                 right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakat maki', '(oikea) sisäranteella ylätorjunta ulospäin', ''),
+                left_knifehand_outward_block: move('left_Knifehand_Outward_Block', '(wen) han sonnal bakat maki', '(vasen) keskitorjunta kämmensyrjällä', ''),
+                right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) han sonnal bakat maki', '(oikea) keskitorjunta kämmensyrjällä', ''),
                 left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) sonnal momtong bakat maki', '(vasen) keskitorjunta kahdella kämmensyrjällä', ''),
                 right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) sonnal momtong bakat maki', '(oikea) keskitorjunta kahdella kämmensyrjällä', '')
                 
@@ -319,7 +323,11 @@
                 left_side_punch: move('left_Side_Punch', '(wen) yop jirugi', '(vasen) sivulyönti', ''),
                 right_side_punch: move('right_Side_Punch', '(orun) yop jirugi', '(oikea) sivulyönti', ''),
                 left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', ''),
-                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '')
+                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', ''),
+                left_backfist_strike: move('left_Backfist_Strike', '(wen) deungjumeok apchigi', '(vasen) rystysisku', ''),
+                right_backfist_strike: move('right_Backfist_Strike', '(orun) deungjumeok apchigi', '(oikea) rystysisku', ''),
+                left_elbow_strike: move('left_Elbow_Strike', '(wen) palkup yeop chigi', '(vasen) kyynärisku', ''),
+                right_elbow_strike: move('right_Elbow_Strike', '(orun) palkup yeop chigi', '(oikea) kyynärisku', '')
             };
             window.kicks = {
                 left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', ''),
@@ -331,7 +339,9 @@
                 left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', ''),
                 right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', ''),
                 left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', ''),
-                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '')
+                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', ''),
+                left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', '(vasen) sivupotku', ''),
+                right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', '(oikea) sivupotku', '')
             };
 
             var part = function(row, col, moves) {
@@ -398,6 +408,47 @@
                         part(2, 2, [right_back_stance, left_double_knifehand_outward_block]),
                         part(3, 2, [left_back_stance, right_double_knifehand_outward_block]),
                         part(3, 3, [right_horse_stance, right_swallowform_knifehand_strike])
+                    ]
+                },
+                {
+                    name: 'sebon2',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [left_back_stance, right_inward_block]),
+                        part(3, 2, [right_back_stance, left_inward_block]),
+                        part(4, 2, [left_back_stance, right_inward_block]),
+                        part(4, 2, [left_back_kick, left_sparring_stance])
+                    ]
+                },
+                {
+                    name: 'sebon3',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [left_back_stance, right_knifehand_outward_block]),
+                        part(3, 2, [right_back_stance, left_knifehand_outward_block]),
+                        part(4, 2, [left_back_stance, right_knifehand_outward_block]),
+                        part(4, 2, [right_side_kick, right_sparring_stance])
+                    ]
+                },
+                {
+                    name: 'sebon4',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [left_back_stance, right_inward_block]),
+                        part(3, 2, [right_back_stance, left_inward_block]),
+                        part(4, 2, [left_back_stance, right_inward_block]),
+                        part(4, 2, [right_front_kick]),
+                        part(3, 2, [right_rear_cross_stance, right_backfist_strike])
+                    ]
+                },
+                {
+                    name: 'sebon5',
+                    parts: [
+                        part(1, 2, [joonbee]),
+                        part(2, 2, [left_back_stance, right_double_knifehand_outward_block]),
+                        part(3, 2, [right_back_stance, left_double_knifehand_outward_block]),
+                        part(4, 2, [left_back_stance, right_double_knifehand_outward_block]),
+                        part(3, 1, [left_horse_stance, left_elbow_strike])
                     ]
                 }];
 
@@ -652,6 +703,62 @@
                             <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
                             <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
                             <tr><td class=" "></td><td class="b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="sebon2">
+                    <h3 onclick=""><span class="print">SE BON </span>I (2.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="sebon3">
+                    <h3 onclick=""><span class="print">SE BON </span>SAM (3.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="sebon4">
+                    <h3 onclick=""><span class="print">SE BON </span>SA (4.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                        <br />
+                    </div>
+                </section>
+
+                <section id="sebon5">
+                    <h3 onclick=""><span class="print">SE BON </span>O (5.)</h3>
+                    <div class="content">
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="b"></td><td class=" "></td></tr>
                         </table>
                         <ol class="moves"></ol>
                         <br />
