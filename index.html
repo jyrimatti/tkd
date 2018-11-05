@@ -340,59 +340,69 @@
 
             let terms = Object.assign({}, directions, stances, blocks, punches, kicks);
             with (terms) {
-                window.hanbon1 = {
+                window.hanbon = [
+                {
                     name: 'hanbon1',
                     parts: [
                         part(2, 2, [joonbee]),
                         part(1, 1, [left_45, left_horse_stance, left_inward_block]),
                         part(1, 1, [right_punch, left_high_punch])
-                ]};
-                window.hanbon2 = {
+                    ]
+                },
+                {
                     name: 'hanbon2',
                     parts: [
                         part(1, 2, [joonbee]),
                         part(2, 2, [backward, left_walking_stance, left_inward_block]),
                         part(1, 1, [left_45, left_front_stance, right_punch])
-                ]};
-                window.hanbon3 = {
+                    ]
+                },
+                {
                     name: 'hanbon3',
                     parts: [
                         part(1, 2, [joonbee]),
                         part(1, 2, [right_front_kick]),
                         part(1, 2, [left_sparring_stance])
-                ]};
-                window.hanbon4 = {
+                    ]
+                },
+                {
                     name: 'hanbon4',
                     parts: [
                         part(2, 2, [joonbee]),
                         part(1, 3, [right_45, right_horse_stance, left_outward_block, right_punch])
-                ]};
-                window.hanbon5 = {
+                    ]
+                },
+                {
                     name: 'hanbon5',
                     parts: [
                         part(1, 2, [joonbee]),
                         part(2, 3, [right_backward_45, left_sparring_stance, left_front_kick]),
                         part(2, 3, [right_high_turning_instep_kick]),
                         part(2, 3, [left_sparring_stance])
-                ]};
-                window.hanbon6 = {
+                    ]
+                },
+                {
                     name: 'hanbon6',
                     parts: [
                         part(1, 2, [joonbee]),
                         part(2, 3, [right_backward_45, left_sparring_stance, right_jump_front_kick]),
                         part(2, 3, [right_sparring_stance])
-                ]};
+                    ]
+                }];
 
-                window.sebon1 = {
+                window.sebon = [
+                {
                     name: 'sebon1',
                     parts: [
                         part(1, 2, [joonbee]),
                         part(2, 2, [right_back_stance, left_double_knifehand_outward_block]),
                         part(3, 2, [left_back_stance, right_double_knifehand_outward_block]),
                         part(3, 3, [right_horse_stance, right_swallowform_knifehand_strike])
-                ]};
+                    ]
+                }];
 
-                window.gichu1 = {
+                window.gichu = [
+                {
                     name: 'gichu1',
                     parts: [
                         part(5, 3, [joonbee]),
@@ -420,8 +430,9 @@
                         part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, right_front_stance, right_low_block]),
                         part(5, 5, [forward, left_front_stance, left_punch])
-                ]};
-                window.gichu2 = {
+                    ]
+                },
+                {
                     name: 'gichu2',
                     parts: [
                         part(5, 3, [joonbee]),
@@ -449,8 +460,9 @@
                         part(5, 1, [forward, right_front_stance, right_high_punch]),
                         part(5, 4, [right_180, right_front_stance, right_low_block]),
                         part(5, 5, [forward, left_front_stance, left_high_punch])
-                ]};
-                window.gichu3 = {
+                    ]
+                },
+                {
                     name: 'gichu3',
                     parts: [
                         part(5, 3, [joonbee]),
@@ -478,9 +490,11 @@
                         part(5, 1, [forward, right_front_stance, right_punch]),
                         part(5, 4, [right_180, left_back_stance, right_inner_forearm_outward_block]),
                         part(5, 5, [forward, left_front_stance, left_punch])
-                ]};
+                    ]
+                }];
 
-                window.taeguk1 = {
+                window.taeguk = [
+                {
                     name: 'taeguk1',
                     parts: [
                         part(5, 3, [joonbee]),
@@ -507,9 +521,9 @@
                         part(2, 3, []),
                         part(2, 3, [right_90, left_front_stance, left_low_block]),
                         part(3, 3, [forward, right_front_stance, right_punch, kihap])
-                ]};
-
-                window.taeguk2 = {
+                    ]
+                },
+                {
                     name: 'taeguk2',
                     parts: [
                         part(7, 3, [joonbee]),
@@ -536,12 +550,8 @@
                         part(3, 3, [right_front_kick, right_walking_stance, right_punch]),
                         part(4, 3, [left_front_kick, left_walking_stance, left_punch]),
                         part(5, 3, [right_front_kick, right_walking_stance, right_punch, kihap])
-                ]};
-
-                window.hanbon = [hanbon1, hanbon2, hanbon3, hanbon4, hanbon5, hanbon6];
-                window.sebon = [sebon1];
-                window.gichu = [gichu1, gichu2, gichu3];
-                window.taeguk = [taeguk1, taeguk2];
+                    ]
+                }];
             };
         </script>
     </head>
