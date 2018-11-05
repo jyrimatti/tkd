@@ -244,7 +244,7 @@
             #terms { display: block; }
             section:hover #terms h4 { display: block; }
             section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
-            section:hover #terms table { width: auto; }
+            section:hover #terms td { width: 30%; }
             section:hover #terms tr { display: table-row; }
             section:hover #terms iframe { display: none; }
             section:hover #terms .selected td { border: 0; }
@@ -277,84 +277,84 @@
             };
 
             window.directions = {
-                forward: move('forward', 'ap', 'eteenpäin', ''),
-                backward: move('backward', 'dwi', 'taaksepäin', ''),
-                left_45: move('left_45', '', 'vasemmalle 45°', ''),
-                right_45: move('right_45', '', 'oikealle 45°', ''),
-                left_backward_45: move('left_backward_45', '', 'vasemmalle taakse 45°', ''),
-                right_backward_45: move('right_backward_45', '', 'oikealle taakse 45°', ''),
-                left_90: move('left_90', '', 'vasemmalle 90°', ''),
-                right_90: move('right_90', '', 'oikealle 90°', ''),
-                left_180: move('left_180', '', 'vasemmalle 180°', ''),
-                right_180: move('right_180', '', 'oikealle 180°', ''),
-                left_270: move('left_270', '', 'vasemmalle 270°', ''),
-                right_270: move('right_270', '', 'oikealle 270°', '')
+                forward: move('forward', 'ap', 'eteenpäin', 'forward'),
+                backward: move('backward', 'dwi', 'taaksepäin', 'backward'),
+                left_45: move('left_45', '', 'vasemmalle 45°', 'left 45°'),
+                right_45: move('right_45', '', 'oikealle 45°', 'right 45°'),
+                left_backward_45: move('left_backward_45', '', 'vasemmalle taakse 45°', 'left backward 45°'),
+                right_backward_45: move('right_backward_45', '', 'oikealle taakse 45°', 'right backward 45°'),
+                left_90: move('left_90', '', 'vasemmalle 90°', 'left 90°'),
+                right_90: move('right_90', '', 'oikealle 90°', 'right 90°'),
+                left_180: move('left_180', '', 'vasemmalle 180°', 'left 180°'),
+                right_180: move('right_180', '', 'oikealle 180°', 'right 180°'),
+                left_270: move('left_270', '', 'vasemmalle 270°', 'left 270°'),
+                right_270: move('right_270', '', 'oikealle 270°', 'right 270°')
             };
             window.stances = {
-                kihap: move('kihap', 'kihap', 'huuto: kiai!', ''),
-                joonbee: move('joonbee', 'junbi', 'valmistaudu', ''),
-                left_sparring_stance: move('left_Sparring_Stance', '(wen) gyeorugi junbi', '(vasen) otteluasento', ''),
-                right_sparring_stance: move('right_Sparring_Stance', '(orun) gyeorugi junbi', '(oikea) otteluasento', ''),
-                left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', ''),
-                right_front_stance: move('right_Front_Stance', '(orun) ap kubi', '(oikea) pitkä perusaskel', ''),
-                left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', '(vasen) lyhyt perusaskel', ''),
-                right_walking_stance: move('right_Walking_Stance', '(orun) ap sogi', '(oikea) lyhyt perusaskel', ''),
-                left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', '(vasen) hevosseisonta', ''),
-                right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', '(oikea) hevosseisonta', ''),
-                left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', '(vasen takana) takaseisonta', ''),
-                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', ''),
-                left_rear_cross_stance: move('left_Rear_Cross_Stance', '(left) dwi koa sogi', '(vasen) takaristiseisonta', ''),
-                right_rear_cross_stance: move('right_Rear_Cross_Stance', '(right) dwi koa sogi', '(oikea) takaristiseisonta', '')
+                kihap: move('kihap', 'kihap', 'huuto!', 'yell!'),
+                joonbee: move('joonbee', 'junbi', 'valmistaudu', 'get ready'),
+                left_sparring_stance: move('left_Sparring_Stance', '(wen) gyorugi junbi', '(vasen) otteluasento', '(left) sparring stance'),
+                right_sparring_stance: move('right_Sparring_Stance', '(orun) gyorugi junbi', '(oikea) otteluasento', '(right) sparring stance'),
+                left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', '(left) front stance'),
+                right_front_stance: move('right_Front_Stance', '(orun) ap kubi', '(oikea) pitkä perusaskel', '(right) front stance'),
+                left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', '(vasen) lyhyt perusaskel', '(left) walking stance'),
+                right_walking_stance: move('right_Walking_Stance', '(orun) ap sogi', '(oikea) lyhyt perusaskel', '(right) walking stance'),
+                left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', '(vasen) hevosseisonta', '(left) horse stance'),
+                right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', '(oikea) hevosseisonta', '(right) horse stance'),
+                left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', '(vasen takana) takaseisonta', '(left) back stance'),
+                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', '(right) back stance'),
+                left_rear_cross_stance: move('left_Rear_Cross_Stance', '(left) dwi koa sogi', '(vasen) takaristiseisonta', '(left) rear cross stance'),
+                right_rear_cross_stance: move('right_Rear_Cross_Stance', '(right) dwi koa sogi', '(oikea) takaristiseisonta', '(right) rear cross stance')
             };
             window.blocks = {
-                left_low_block: move('left_Low_Block', '(wen) arae makgi', '(vasen) alatorjunta', ''),
-                right_low_block: move('right_Low_Block', '(orun) arae makgi', '(oikea) alatorjunta', ''),
-                left_inward_block: move('left_Inward_Block', '(wen) momtong makgi', '(vasen) keskitorjunta', ''),
-                right_inward_block: move('right_Inward_Block', '(orun) momtong makgi', '(oikea) keskitorjunta', ''),
-                left_outward_block: move('left_Outward_Block', '(wen) momtong bakkat makgi', '(vasen) keskitorjunta ulospäin', ''),
-                right_outward_block: move('right_Outward_Block', '(orun) momtong bakkat makgi', '(oikea) keskitorjunta ulospäin', ''),
-                left_high_block: move('left_High_Block', '(wen) olgul makgi', '(vasen) ylätorjunta', ''),
-                right_high_block: move('right_High_Block', '(orun) olgul makgi', '(oikea) ylätorjunta', ''),
-                left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakkat makgi', '(vasen) sisäranteella keskitorjunta ulospäin', ''),
-                right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakkat makgi', '(oikea) sisäranteella keskitorjunta ulospäin', ''),
-                left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakkat makgi', '(vasen) sisäranteella ylätorjunta ulospäin', ''),
-                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakkat makgi', '(oikea) sisäranteella ylätorjunta ulospäin', ''),
-                left_knifehand_outward_block: move('left_Knifehand_Outward_Block', '(wen) hansonnal bakkat makgi', '(vasen) keskitorjunta kämmensyrjällä', ''),
-                right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) hansonnal bakkat makgi', '(oikea) keskitorjunta kämmensyrjällä', ''),
-                left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) yangsonnal momtong bakkat makgi', '(vasen) keskitorjunta kahdella kämmensyrjällä', ''),
-                right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) yangsonnal momtong bakkat makgi', '(oikea) keskitorjunta kahdella kämmensyrjällä', ''),
-                left_palmheel_pressing_block: move('left_Palmheel_Block', '(wen) batangson momtong nullo makgi', '(vasen) keskitorjunta kämmenellä painaen', ''),
-                right_palmheel_pressing_block: move('right_Palmheel_Block', '(orun) batangson momtong nullo makgi', '(oikea) keskitorjunta kämmenellä painaen', '')
+                left_low_block: move('left_Low_Block', '(wen) arae makgi', '(vasen) alatorjunta', '(left) low block'),
+                right_low_block: move('right_Low_Block', '(orun) arae makgi', '(oikea) alatorjunta', '(right) low block'),
+                left_inward_block: move('left_Inward_Block', '(wen) momtong makgi', '(vasen) keskitorjunta sisäänpäin', '(left) inward middle block'),
+                right_inward_block: move('right_Inward_Block', '(orun) momtong makgi', '(oikea) keskitorjunta sisäänpäin', '(right) inward middle block'),
+                left_outward_block: move('left_Outward_Block', '(wen) momtong bakkat makgi', '(vasen) keskitorjunta ulospäin', '(left) outward middle block'),
+                right_outward_block: move('right_Outward_Block', '(orun) momtong bakkat makgi', '(oikea) keskitorjunta ulospäin', '(right) outward middle block'),
+                left_high_block: move('left_High_Block', '(wen) olgul makgi', '(vasen) ylätorjunta', '(left) high block'),
+                right_high_block: move('right_High_Block', '(orun) olgul makgi', '(oikea) ylätorjunta', '(right) high block'),
+                left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakkat makgi', '(vasen) sisäranteella keskitorjunta ulospäin', '(left) inner-forearm outward block'),
+                right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakkat makgi', '(oikea) sisäranteella keskitorjunta ulospäin', '(right) inner-forearm outward block'),
+                left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakkat makgi', '(vasen) sisäranteella ylätorjunta ulospäin', '(left) inner-forearm high outward block'),
+                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakkat makgi', '(oikea) sisäranteella ylätorjunta ulospäin', '(right) inner-forearm high outward block'),
+                left_knifehand_outward_block: move('left_Knifehand_Outward_Block', '(wen) hansonnal bakkat makgi', '(vasen) keskitorjunta kämmensyrjällä', '(left) knifehand outwrad block'),
+                right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) hansonnal bakkat makgi', '(oikea) keskitorjunta kämmensyrjällä', '(right) knifehand outwrad block'),
+                left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) yangsonnal momtong bakkat makgi', '(vasen) keskitorjunta kahdella kämmensyrjällä', '(left) double knifehand outward block'),
+                right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) yangsonnal momtong bakkat makgi', '(oikea) keskitorjunta kahdella kämmensyrjällä', '(right) double knifehand outward block'),
+                left_palmheel_pressing_block: move('left_Palmheel_Block', '(wen) batangson momtong nullo makgi', '(vasen) keskitorjunta kämmenellä painaen', '(left) palmheel pressing block'),
+                right_palmheel_pressing_block: move('right_Palmheel_Block', '(orun) batangson momtong nullo makgi', '(oikea) keskitorjunta kämmenellä painaen', '(right) palmheel pressing block')
             };
             window.punches = {
-                left_punch: move('left_Punch', '(wen) jireugi', '(vasen) suora lyönti', ''),
-                right_punch: move('right_Punch', '(orun) jireugi', '(oikea) suora lyönti', ''),
-                left_high_punch: move('left_High_Punch', '(wen) olgul jireugi', '(vasen) ylälyönti', ''),
-                right_high_punch: move('right_High_Punch', '(orun) olgul jireugi', '(oikea) ylälyönti', ''),
-                left_side_punch: move('left_Side_Punch', '(wen) yeop jireugi', '(vasen) sivulyönti', ''),
-                right_side_punch: move('right_Side_Punch', '(orun) yeop jireugi', '(oikea) sivulyönti', ''),
-                left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', ''),
-                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', ''),
-                left_backfist_strike: move('left_Backfist_Strike', '(wen) deungjumeok apchigi', '(vasen) rystysisku', ''),
-                right_backfist_strike: move('right_Backfist_Strike', '(orun) deungjumeok apchigi', '(oikea) rystysisku', ''),
-                left_elbow_strike: move('left_Elbow_Strike', '(wen) palkeop yeop chigi', '(vasen) kyynärisku', ''),
-                right_elbow_strike: move('right_Elbow_Strike', '(orun) palkeop yeop chigi', '(oikea) kyynärisku', '')
+                left_punch: move('left_Punch', '(wen) jireugi', '(vasen) suora lyönti', '(left) punch'),
+                right_punch: move('right_Punch', '(orun) jireugi', '(oikea) suora lyönti', '(right) punch'),
+                left_high_punch: move('left_High_Punch', '(wen) olgul jireugi', '(vasen) ylälyönti', '(left) high punch'),
+                right_high_punch: move('right_High_Punch', '(orun) olgul jireugi', '(oikea) ylälyönti', '(right) high punch'),
+                left_side_punch: move('left_Side_Punch', '(wen) yeop jireugi', '(vasen) sivulyönti', '(left) side punch'),
+                right_side_punch: move('right_Side_Punch', '(orun) yeop jireugi', '(oikea) sivulyönti', '(right) side punch'),
+                left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(left) swallowform knifehand strike'),
+                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(right) swallowform knifehand strike'),
+                left_backfist_strike: move('left_Backfist_Strike', '(wen) deungjumeok apchigi', '(vasen) rystysisku', '(left) backfist strike'),
+                right_backfist_strike: move('right_Backfist_Strike', '(orun) deungjumeok apchigi', '(oikea) rystysisku', '(right) backfist strike'),
+                left_elbow_strike: move('left_Elbow_Strike', '(wen) palkeop yeop chigi', '(vasen) kyynärisku', '(left) elbow strike'),
+                right_elbow_strike: move('right_Elbow_Strike', '(orun) palkeop yeop chigi', '(oikea) kyynärisku', '(right) elbow strike')
             };
             window.kicks = {
-                left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', ''),
-                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', ''),
-                left_jump_front_kick: move('left_Jump_Front_Kick', '(wen) ttwieo ap chagi', '(vasen) hyppyetupotku', ''),
-                right_jump_front_kick: move('right_Jump_Front_Kick', '(orun) ttwieo ap chagi', '(oikea) hyppyetupotku', ''),
-                left_back_kick: move('left_Back_Kick', '(wen) dwi chagi', '(vasen) takapotku', ''),
-                right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', '(oikea) takapotku', ''),
-                left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', ''),
-                right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', ''),
-                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', ''),
-                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', ''),
-                left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', '(vasen) sivupotku', ''),
-                right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', '(oikea) sivupotku', ''),
-                left_rear_whip_kick: move('left_Whip_Kick', '(wen) dwi huryeo chagi', '(vasen) takaruoskapotku', ''),
-                right_rear_whip_kick: move('right_Whip_Kick', '(orun) dwi huryeo chagi', '(oikea) takaruoskapotku', '')
+                left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', '(left) front kick'),
+                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', '(right) front kick'),
+                left_jump_front_kick: move('left_Jump_Front_Kick', '(wen) ttwieo ap chagi', '(vasen) hyppyetupotku', '(left) jump front kick'),
+                right_jump_front_kick: move('right_Jump_Front_Kick', '(orun) ttwieo ap chagi', '(oikea) hyppyetupotku', '(right) jump front kick'),
+                left_back_kick: move('left_Back_Kick', '(wen) dwi chagi', '(vasen) takapotku', '(left) back kick'),
+                right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', '(oikea) takapotku', '(right) back kick'),
+                left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', '(left) turning kick'),
+                right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', '(right) turning kick'),
+                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', '(left) high turning instep kick'),
+                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '(right) high turning instep kick'),
+                left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', '(vasen) sivupotku', '(left) side kick'),
+                right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', '(oikea) sivupotku', '(right) side kick'),
+                left_rear_whip_kick: move('left_Whip_Kick', '(wen) dwi huryeo chagi', '(vasen) takaruoskapotku', '(left) rear whip kick'),
+                right_rear_whip_kick: move('right_Whip_Kick', '(orun) dwi huryeo chagi', '(oikea) takaruoskapotku', '(right) rear whip kick')
             };
 
             var part = function(row, col, moves) {
