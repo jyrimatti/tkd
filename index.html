@@ -957,9 +957,10 @@
             h('Potkut', kicks);
 
             window.onMoveOver = function(termName) {
-                document.querySelectorAll('#terms .selected').forEach(function(s) {
-                    s.classList.remove('selected');
-                });
+                var nodelist = document.querySelectorAll('#terms .selected');
+                for (var i = 0; i < nodelist.length; i++) {
+                    nodelist[i].classList.remove('selected');
+                };
                 var term = document.querySelector('#terms .' + termName);
                 if (term) {
                     term.classList.add('selected');
