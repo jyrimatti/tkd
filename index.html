@@ -401,7 +401,7 @@
                 return { row: row, col: col, moves: moves };
             }
 
-            let terms = Object.assign({}, directions, body, commands, stances, blocks, punches, kicks);
+            var terms = Object.assign({}, directions, body, commands, stances, blocks, punches, kicks);
             with (terms) {
                 window.hanbon = [
                 {
@@ -933,11 +933,11 @@
         </section>
 
         <script>
-            let h = function(group, terms) {
-                let c = document.querySelector('#terms .content')
-                let d = c.appendChild(document.createElement('div'));
+            var h = function(group, terms) {
+                var c = document.querySelector('#terms .content')
+                var d = c.appendChild(document.createElement('div'));
                 d.innerHTML += '<h4>' + group + '</h4>';
-                let table = d.appendChild(document.createElement('table'));
+                var table = d.appendChild(document.createElement('table'));
                 table.innerHTML = Object.values(terms).map(function(term) {
                     return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
                 }).join(' ');
@@ -953,14 +953,14 @@
                 document.querySelectorAll('#terms .selected').forEach(function(s) {
                     s.classList.remove('selected');
                 });
-                let term = document.querySelector('#terms .' + termName);
+                var term = document.querySelector('#terms .' + termName);
                 if (term) {
                     term.classList.add('selected');
-                    let iframe = document.querySelector('#terms .' + termName + ' iframe');
+                    var iframe = document.querySelector('#terms .' + termName + ' iframe');
                     iframe.setAttribute('src', iframe.getAttribute('data-src'));
                 }
             };
-            let toHtml = function(x) {
+            var toHtml = function(x) {
                 return '<li title="' + x.ko + '" class="' + x.name.toLowerCase() + '" onmouseover="onMoveOver(\'' + x.name + '\')">' + x.fi + '</li>';
             };
 
@@ -980,8 +980,8 @@
                         }
                         pat.appendChild(document.createElement('div')).classList.add('order' + i);
 
-                        let clazz = 'order' + i;
-                        let part = p.moves.map(toHtml).join('');
+                        var clazz = 'order' + i;
+                        var part = p.moves.map(toHtml).join('');
                         return '<li><ul onmouseover="document.body.classList.add(\'' + clazz + '\')" onmouseout="document.body.classList.remove(\'' + clazz + '\')">' + (part == '' ? '<br />' : '<li class="prefix ' + clazz + '" ></li>' + part) + '</ul></li>';
                     }
                 }).join('');
