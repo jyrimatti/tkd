@@ -945,7 +945,7 @@
                 var d = c.appendChild(document.createElement('div'));
                 d.innerHTML += '<h4>' + group + '</h4>';
                 var table = d.appendChild(document.createElement('table'));
-                table.innerHTML = Object.values(terms).map(function(term) {
+                table.innerHTML = Object.keys(terms).map(function(key) { return terms[key]; }).map(function(term) {
                     return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
                 }).join(' ');
             };
