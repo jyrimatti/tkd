@@ -165,6 +165,16 @@
                 border-top-right-radius: 1em;
                 white-space: nowrap;
             }
+            .print-button {
+                position: absolute;
+                right: 0;
+            }
+            .print-button h2 {
+                border-width: 0 0 1px 1px;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 1em;
+            }
+
             section:hover > h3,
             section:hover > h2 { background-color: lightgray; }
 
@@ -999,6 +1009,10 @@
                     </div>
                 </section>
             </div>
+        </section>
+
+        <section class="print-button" class="noprint">
+            <h2 onclick="javascript:window.print()">print</h2>
         </section>
 
         <script>
