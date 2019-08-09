@@ -47,16 +47,17 @@
             .left_double_knifehand_outward_block, .right_double_knifehand_outward_block { background-color: #42a73b; }
             .left_palmheel_block, .right_palmheel_block { background-color: #339a2b; }
 
-            /* PowderBlue,RoyalBlue,9 */
+            /* PowderBlue,RoyalBlue,10 */
             .left_punch, .right_punch { background-color: #b0e0e6; }
-            .left_side_punch, .right_side_punch { background-color: #a6d0e6; }
-            .left_high_punch, .right_high_punch { background-color: #9bc0e6; }
-            .left_swallowform_knifehand_strike, .right_swallowform_knifehand_strike { background-color: #90b2e5; }
-            .left_backfist_strike, .right_backfist_strike { background-color: #83a2e5; }
-            .left_elbow_strike, .right_elbow_strike { background-color: #7694e4; }
-            .double_punch { background-color: #6885e3; }
-            .inward_knifehand_strike { background-color: #5677e2; }
-            .outward_knifehand_strike { background-color: #4169e1; }
+            .left_side_punch, .right_side_punch { background-color: #a7d2e6; }
+            .left_high_punch, .right_high_punch { background-color: #9ec4e6; }
+            .left_swallowform_knifehand_strike, .right_swallowform_knifehand_strike { background-color: #94b7e5; }
+            .left_backfist_strike, .right_backfist_strike { background-color: #89a9e5; }
+            .left_elbow_strike, .right_elbow_strike { background-color: #7e9ce4; }
+            .double_punch { background-color: #728fe4; }
+            .inward_knifehand_strike { background-color: #6482e3; }
+            .outward_knifehand_strike { background-color: #5475e2; }
+            .left_spearhand_thrust, .right_spearhand_thrust { background-color: #4169e1; }
 
             .left_front_kick, .right_front_kick { background-color: #ffe4e1; }
             .left_jump_front_kick, .right_jump_front_kick { background-color: #ffd4cb; }
@@ -173,6 +174,8 @@
                 border-width: 0 0 1px 1px;
                 border-top-right-radius: 0;
                 border-bottom-left-radius: 1em;
+                font-weight: normal;
+                font-family: verdana;
             }
 
             section:hover > h3,
@@ -402,7 +405,9 @@
                 left_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(wen) sonnal bakat chigi', '(vasen) veitsikäden isku ulospäin', '(left) outward knifehand strike'),
                 right_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(orun) sonnal bakat chigi', '(oikea) veitsikäden isku ulospäin', '(right) outward knifehand strike'),
                 left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(left) swallowform knifehand strike'),
-                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(right) swallowform knifehand strike')
+                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(right) swallowform knifehand strike'),
+                left_supported_spearhand_thrust: move('left_Spearhand_Thrust', '(wen) pyonsonkeut sewotzireugi', '(vasen) tuettu keihäsisku', '(left) supported spearhand thrust'),
+                right_supported_spearhand_thrust: move('right_Spearhand_Thrust', '(orun) pyonsonkeut sewotzireugi', '(oikea) tuettu keihäsisku', '(right) supported spearhand thrust')
             };
             window.kicks = {
                 left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', '(left) front kick'),
@@ -727,6 +732,34 @@
                         part(4, 3, [left_front_kick, left_walking_stance, left_low_block, right_punch]),
                         part(5, 3, [right_front_kick, right_walking_stance, right_low_block, left_punch, kihap])
                     ]
+                },
+                {
+                    name: 'taeguk4',
+                    parts: [
+                        part(5, 3, [junbi]),
+                        part(5, 2, [left_90, right_back_stance, left_double_knifehand_outward_block]),
+                        part(5, 1, [forward, right_front_stance, right_supported_spearhand_thrust]),
+                        part(5, 4, [right_180, left_back_stance, right_double_knifehand_outward_block]),
+                        part(5, 5, [forward, left_front_stance, left_supported_spearhand_thrust]),
+                        part(5, 5, []),
+                        part(4, 3, [left_90, left_front_stance, right_swallowform_knifehand_strike]),
+                        part(3, 3, [right_front_kick, right_front_stance, left_punch]),
+                        part(2, 3, [left_side_kick, right_back_stance]),
+                        part(1, 3, [right_side_kick, left_back_stance, right_double_knifehand_outward_block]),
+                        part(1, 3, []),
+                        part(1, 4, [left_270, right_back_stance, left_outward_block]),
+                        part(1, 4, [right_front_kick, right_back_stance, right_inward_block]),
+                        part(1, 2, [right_180, left_back_stance, right_outward_block]),
+                        part(1, 2, [left_front_kick, left_back_stance, left_inward_block]),
+                        part(1, 3, []),
+                        part(2, 3, [left_90, left_front_stance, right_swallowform_knifehand_strike]),
+                        part(3, 3, [right_front_kick, right_front_stance, right_backfist_strike]),
+                        part(3, 4, [left_90, left_walking_stance, left_inward_block, right_punch]),
+                        part(3, 2, [right_180, right_walking_stance, right_inward_block, left_punch]),
+                        part(3, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_inward_block, right_left_punch]),
+                        part(5, 3, [forward, right_front_stance, right_inward_block, left_right_punch, kihap])
+                    ]
                 }];
             };
         </script>
@@ -1008,6 +1041,21 @@
                         <ol class="moves"></ol>
                     </div>
                 </section>
+
+                <section id="taeguk4">
+                        <h3 onclick=""><span class="print">TAEGUK </span>SA (4.) JANG</h3>
+                        <div class="content">
+                            <img src="https://vignette.wikia.nocookie.net/taekwondo/images/d/d4/PoomsaeT4_3D.png/revision/latest?cb=20170329214325" />
+                            <table class="pattern">
+                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                                <tr><td class="l"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="r"></td></tr>
+                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                                <tr><td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                            </table>
+                            <ol class="moves"></ol>
+                        </div>
+                    </section>
             </div>
         </section>
 
