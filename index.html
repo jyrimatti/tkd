@@ -166,16 +166,9 @@
                 border-top-right-radius: 1em;
                 white-space: nowrap;
             }
-            .print-button {
-                position: absolute;
-                right: 0;
-            }
             .print-button h2 {
-                border-width: 0 0 1px 1px;
-                border-top-right-radius: 0;
-                border-bottom-left-radius: 1em;
                 font-weight: normal;
-                font-family: verdana;
+                color: gray;
             }
 
             section:hover > h3,
@@ -217,8 +210,15 @@
             .taeguk h2:hover,
             .taeguk:hover h2 { background-color: lightpink; }
 
+            .credits {
+                position: absolute;
+                top: 5em;
+                left: 1em;
+            }
+
             section { flex-wrap: nowrap; }
             .content {
+                background: white;
                 position: absolute;
                 top: 3.65em;
                 left: 0;
@@ -234,16 +234,27 @@
             h3:hover + .content,
             h2:hover + .content { display: block; }
 
-            img {
+            .resource {
                 height: 15em;
-                left: 15em;
+                width: auto;
+                left: 36em;
                 top: 1em;
                 position: absolute;
                 border: 1px solid black;
                 border-radius: 1em;
             }
-            img:hover {
+            .resource:first-child {
+                left: 15em;
+            }
+            iframe.resource:hover {
+                width: 680px;
+                height: 510px;
+            }
+            img.resource:hover {
                 height: 95%;
+                max-height: 50em;
+            }
+            .resource:hover {
                 z-index: 99;
             }
 
@@ -263,7 +274,6 @@
             #terms tr:last-child td { border: 0; }
             #terms table { width: 100%; }
             #terms tr { display: none; white-space: nowrap; background-color: inherit; }
-            #terms { display: block; }
             section:hover #terms h4 { display: block; }
             section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
             section:hover #terms td { width: 30%; }
@@ -765,6 +775,14 @@
         </script>
     </head>
     <body>
+        <div class="credits">
+            <p>Content adapted from:</p>
+            <ul>
+                <li><a href="https://taekwondo.fandom.com/">Taekwondo wiki</a></li>
+                <li><a href="https://www.taekwondovihti.fi">Vihti Taekwondo</a></li>
+            </ul>
+        </div>
+
         <section>
             <h2 onclick="">Terms</h2>
             <div class="content" id="terms">
@@ -995,7 +1013,8 @@
                 <section id="taeguk1">
                     <h3 onclick=""><span class="print">TAEGUK </span>IL (1.) JANG</h3>
                     <div class="content">
-                        <img src="https://vignette.wikia.nocookie.net/taekwondo/images/5/52/PoomsaeT1_3D.png/revision/latest/scale-to-width-down/1024?cb=20180524214834" />
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/5/52/PoomsaeT1_3D.png/revision/latest/scale-to-width-down/1024?cb=20180524214834" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/4iEub_kJHGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <table class="pattern">
                             <tr><td class="t b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="t b"></td></tr>
                             <tr><td class="t  "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class="t  "></td></tr>
@@ -1011,7 +1030,8 @@
                 <section id="taeguk2">
                     <h3 onclick=""><span class="print">TAEGUK </span>I (2.) JANG</h3>
                     <div class="content">
-                        <img src="https://vignette.wikia.nocookie.net/taekwondo/images/9/9a/PoomsaeT2_3D.png/revision/latest/scale-to-width-down/1024?cb=20170329215102" />
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/9/9a/PoomsaeT2_3D.png/revision/latest/scale-to-width-down/1024?cb=20170329215102" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/kly91II9g18" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <table class="pattern">
                             <tr>          <td class=" "></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class=" "></td></tr>
                             <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
@@ -1028,7 +1048,8 @@
                 <section id="taeguk3">
                     <h3 onclick=""><span class="print">TAEGUK </span>SAM (3.) JANG</h3>
                     <div class="content">
-                        <img src="https://vignette.wikia.nocookie.net/taekwondo/images/d/dc/PoomsaeT3_3D.png/revision/latest?cb=20170329214828" />
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/d/dc/PoomsaeT3_3D.png/revision/latest?cb=20170329214828" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/4S5czN6WQCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <table class="pattern">
                             <tr>          <td class=" "></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class=" "></td></tr>
                             <tr class="t"><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
@@ -1043,19 +1064,20 @@
                 </section>
 
                 <section id="taeguk4">
-                        <h3 onclick=""><span class="print">TAEGUK </span>SA (4.) JANG</h3>
-                        <div class="content">
-                            <img src="https://vignette.wikia.nocookie.net/taekwondo/images/d/d4/PoomsaeT4_3D.png/revision/latest?cb=20170329214325" />
-                            <table class="pattern">
-                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                                <tr><td class="l"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="r"></td></tr>
-                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                                <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
-                                <tr><td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
-                            </table>
-                            <ol class="moves"></ol>
-                        </div>
-                    </section>
+                    <h3 onclick=""><span class="print">TAEGUK </span>SA (4.) JANG</h3>
+                    <div class="content">
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/d/d4/PoomsaeT4_3D.png/revision/latest?cb=20170329214325" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/Kwx2XJGFUhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr><td class="l"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="r"></td></tr>
+                            <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr><td class="b"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="b"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                    </div>
+                </section>
             </div>
         </section>
 
