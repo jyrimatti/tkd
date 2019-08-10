@@ -12,7 +12,7 @@
             ol { padding: 0; padding-bottom: 200em; list-style-position: inside; }
             ol > li { display: block; }
             ul { list-style-type: none; padding: 0.25em; padding-left: 1em; display: flex; }
-            ul li { opacity: 0.75; display: inline; border: 1px dotted gray; padding: 0 0.5em; margin: 0 0.25em; border-radius: 0.25em; min-width: 11em; display: inline-block; flex-wrap: nowrap; }
+            ul li { opacity: 0.75; display: inline; border: 1px dotted gray; padding: 0 0.5em; margin: 0 0.25em; border-radius: 0.25em; min-width: 9.5em; display: inline-block; flex-wrap: nowrap; }
             ul li.kihap { min-width: 5em; }
             ul li.prefix { min-width: 0; padding-left: 0; }
 
@@ -29,14 +29,17 @@
             }
             
             /* https://gka.github.io/palettes/ */
+
+            /* lightyellow, darkorange, 9 */
             .junbi { background-color: #ffffe0; }
-            .left_sparring_stance, .right_sparring_stance { background-color: #fff5cc; }
-            .left_walking_stance, .right_walking_stance { background-color: #ffedb9; }
-            .left_front_stance, .right_front_stance { background-color: #ffe2a5; }
-            .left_horse_stance, .right_horse_stance { background-color: #ffd992; }
-            .left_back_stance, .right_back_stance { background-color: #ffd07d; }
-            .left_rear_cross_stance, .right_rear_cross_stance { background-color: #ffc567; }
-            .kihap { background-color: #ffba4e; }
+            .left_walking_stance, .right_walking_stance { background-color: #fff2c9; }
+            .left_sparring_stance, .right_sparring_stance { background-color: #ffe5b2; }
+            .left_horse_stance, .right_horse_stance { background-color: #ffd79b; }
+            .left_front_stance, .right_front_stance { background-color: #ffc984; }
+            .left_back_stance, .right_back_stance { background-color: #ffbb6b; }
+            .left_rear_cross_stance, .right_rear_cross_stance { background-color: #ffac51; }
+            .left_stance, .right_stance { background-color: #ff9d34; }
+            .kihap { background-color: #ff8c00; }
             
             .left_low_block, .right_low_block { background-color: #98fb98; }
             .left_inward_block, .right_inward_block { background-color: #8aec88; }
@@ -47,17 +50,19 @@
             .left_double_knifehand_outward_block, .right_double_knifehand_outward_block { background-color: #42a73b; }
             .left_palmheel_block, .right_palmheel_block { background-color: #339a2b; }
 
-            /* PowderBlue,RoyalBlue,10 */
+            /* PowderBlue, RoyalBlue, 12 */
             .left_punch, .right_punch { background-color: #b0e0e6; }
-            .left_side_punch, .right_side_punch { background-color: #a7d2e6; }
-            .left_high_punch, .right_high_punch { background-color: #9ec4e6; }
-            .left_swallowform_knifehand_strike, .right_swallowform_knifehand_strike { background-color: #94b7e5; }
-            .left_backfist_strike, .right_backfist_strike { background-color: #89a9e5; }
-            .left_elbow_strike, .right_elbow_strike { background-color: #7e9ce4; }
-            .double_punch { background-color: #728fe4; }
-            .inward_knifehand_strike { background-color: #6482e3; }
-            .outward_knifehand_strike { background-color: #5475e2; }
-            .left_spearhand_thrust, .right_spearhand_thrust { background-color: #4169e1; }
+            .left_side_punch, .right_side_punch { background-color: #a9d5e6; }
+            .left_swallowform_knifehand_strike, .right_swallowform_knifehand_strike { background-color: #a1c9e6; }
+            .left_backfist_strike, .right_backfist_strike { background-color: #99bee6; }
+            .left_elbow_strike, .right_elbow_strike { background-color: #91b3e5; }
+            .left_high_punch, .right_high_punch { background-color: #88a8e5; }
+            .double_punch { background-color: #7f9de4; }
+            .inward_knifehand_strike { background-color: #7593e4; }
+            .left_spearhand_thrust, .right_spearhand_thrust { background-color: #6a88e3; }
+            .left_hammerfist_strike, .right_hammerfist_strike { background-color: #5f7ee3; }
+            .left_elbow_target_strike, .right_elbow_target_strike { background-color: #5173e2; }
+            .outward_knifehand_strike { background-color: #4169e1; }
 
             .left_front_kick, .right_front_kick { background-color: #ffe4e1; }
             .left_jump_front_kick, .right_jump_front_kick { background-color: #ffd4cb; }
@@ -65,6 +70,7 @@
             .left_turning_kick, .right_turning_kick { background-color: #ffb29f; }
             .left_high_turning_instep_kick, .right_high_turning_instep_kick { background-color: #ffa188; }
             .left_side_kick, .right_side_kick { background-color: #ff8e72; }
+            .left_side_kick_punch, .right_side_kick_punch { background-color: #ff8e72; }
             .left_whip_kick, .right_whip_kick { background-color: #ff795a; }
 
             ul :hover { opacity: 1; }
@@ -210,15 +216,8 @@
             .taeguk h2:hover,
             .taeguk:hover h2 { background-color: lightpink; }
 
-            .credits {
-                position: absolute;
-                top: 5em;
-                left: 1em;
-            }
-
             section { flex-wrap: nowrap; }
             .content {
-                background: white;
                 position: absolute;
                 top: 3.65em;
                 left: 0;
@@ -235,9 +234,9 @@
             h2:hover + .content { display: block; }
 
             .resource {
-                height: 15em;
-                width: auto;
-                left: 36em;
+                height: 12em;
+                width: 15em;
+                left: 30.5em;
                 top: 1em;
                 position: absolute;
                 border: 1px solid black;
@@ -251,6 +250,7 @@
                 height: 510px;
             }
             img.resource:hover {
+                width: auto;
                 height: 95%;
                 max-height: 50em;
             }
@@ -258,7 +258,8 @@
                 z-index: 99;
             }
 
-            #terms h4 { display: none; }
+            #terms { display: block; }
+            #terms h4, #terms ul { display: none; }
             #terms .selected { display: flex; flex-direction: column; }
             #terms .selected td { border: 1px solid gray; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; }
             #terms .selected td:last-child { border: 0; }
@@ -274,7 +275,7 @@
             #terms tr:last-child td { border: 0; }
             #terms table { width: 100%; }
             #terms tr { display: none; white-space: nowrap; background-color: inherit; }
-            section:hover #terms h4 { display: block; }
+            section:hover #terms h4, section:hover #terms ul { display: block; }
             section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
             section:hover #terms td { width: 30%; }
             section:hover #terms .translate { display: table-cell; width: 10%; min-width: 10%; }
@@ -364,76 +365,84 @@
                 kihap: move('kihap', 'kihap', 'huuto!', 'yell!', 'https://translate.google.com/#ko/en/기합')
             };
             window.stances = {
-                left_sparring_stance: move('left_Sparring_Stance', '(wen) gyorugi junbi', '(vasen) otteluasento', '(left) sparring stance'),
-                right_sparring_stance: move('right_Sparring_Stance', '(orun) gyorugi junbi', '(oikea) otteluasento', '(right) sparring stance'),
-                left_front_stance: move('left_Front_Stance', '(wen) ap kubi', '(vasen) pitkä perusaskel', '(left) front stance'),
-                right_front_stance: move('right_Front_Stance', '(orun) ap kubi', '(oikea) pitkä perusaskel', '(right) front stance'),
-                left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', '(vasen) lyhyt perusaskel', '(left) walking stance'),
-                right_walking_stance: move('right_Walking_Stance', '(orun) ap sogi', '(oikea) lyhyt perusaskel', '(right) walking stance'),
-                left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', '(vasen) hevosseisonta', '(left) horse stance'),
-                right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', '(oikea) hevosseisonta', '(right) horse stance'),
-                left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', '(vasen takana) takaseisonta', '(left) back stance'),
-                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', '(oikea takana) takaseisonta', '(right) back stance'),
-                left_rear_cross_stance: move('left_Rear_Cross_Stance', '(left) dwi koa sogi', '(vasen) takaristiseisonta', '(left) rear cross stance'),
-                right_rear_cross_stance: move('right_Rear_Cross_Stance', '(right) dwi koa sogi', '(oikea) takaristiseisonta', '(right) rear cross stance')
+                left_sparring_stance: move('left_Sparring_Stance', '(wen) gyorugi junbi', 'vas. otteluasento', '(left) sparring stance'),
+                right_sparring_stance: move('right_Sparring_Stance', '(orun) gyorugi junbi', 'oik. otteluasento', '(right) sparring stance'),
+                left_front_stance: move('left_Front_Stance', '(wen) ap kubi', 'vas. pitkä perusaskel', '(left) front stance'),
+                right_front_stance: move('right_Front_Stance', '(orun) ap kubi', 'oik. pitkä perusaskel', '(right) front stance'),
+                left_walking_stance: move('left_Walking_Stance', '(wen) ap sogi', 'vas. lyhyt perusaskel', '(left) walking stance'),
+                right_walking_stance: move('right_Walking_Stance', '(orun) ap sogi', 'oik. lyhyt perusaskel', '(right) walking stance'),
+                left_stance: move('Left_Stance', '(wen) yeop sogi', 'vas. seisonta', '(left) stance'),
+                right_stance: move('Right_Stance', '(orun) yeop sogi', 'oik. seisonta', '(right) stance'),
+                left_horse_stance: move('left_Horse_Stance', '(wen) juchum sogi', 'vas. hevosseisonta', '(left) horse stance'),
+                right_horse_stance: move('right_Horse_Stance', '(orun) juchum sogi', 'oik. hevosseisonta', '(right) horse stance'),
+                left_back_stance: move('left_Back_Stance', '(wen) dwi kubi sogi', 'vas. takana takaseisonta', '(left) back stance'),
+                right_back_stance: move('right_Back_Stance', '(orun) dwi kubi sogi', 'oik. takana takaseisonta', '(right) back stance'),
+                left_rear_cross_stance: move('left_Rear_Cross_Stance', '(left) dwi koa sogi', 'vas. takaristiseisonta', '(left) rear cross stance'),
+                right_rear_cross_stance: move('right_Rear_Cross_Stance', '(right) dwi koa sogi', 'oik. takaristiseisonta', '(right) rear cross stance')
             };
             window.blocks = {
-                left_low_block: move('left_Low_Block', '(wen) arae makgi', '(vasen) alatorjunta', '(left) low block'),
-                right_low_block: move('right_Low_Block', '(orun) arae makgi', '(oikea) alatorjunta', '(right) low block'),
-                left_inward_block: move('left_Inward_Block', '(wen) momtong makgi', '(vasen) keskitorjunta sisäänpäin', '(left) inward middle block'),
-                right_inward_block: move('right_Inward_Block', '(orun) momtong makgi', '(oikea) keskitorjunta sisäänpäin', '(right) inward middle block'),
-                left_outward_block: move('left_Outward_Block', '(wen) momtong bakkat makgi', '(vasen) keskitorjunta ulospäin', '(left) outward middle block'),
-                right_outward_block: move('right_Outward_Block', '(orun) momtong bakkat makgi', '(oikea) keskitorjunta ulospäin', '(right) outward middle block'),
-                left_high_block: move('left_High_Block', '(wen) olgul makgi', '(vasen) ylätorjunta', '(left) high block'),
-                right_high_block: move('right_High_Block', '(orun) olgul makgi', '(oikea) ylätorjunta', '(right) high block'),
-                left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakkat makgi', '(vasen) sisäranteella keskitorjunta ulospäin', '(left) inner-forearm outward block'),
-                right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakkat makgi', '(oikea) sisäranteella keskitorjunta ulospäin', '(right) inner-forearm outward block'),
-                left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakkat makgi', '(vasen) sisäranteella ylätorjunta ulospäin', '(left) inner-forearm high outward block'),
-                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakkat makgi', '(oikea) sisäranteella ylätorjunta ulospäin', '(right) inner-forearm high outward block'),
-                left_knifehand_outward_block: move('left_Knifehand_Outward_Block', '(wen) hansonnal bakkat makgi', '(vasen) keskitorjunta kämmensyrjällä', '(left) knifehand outwrad block'),
-                right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) hansonnal bakkat makgi', '(oikea) keskitorjunta kämmensyrjällä', '(right) knifehand outwrad block'),
-                left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) yangsonnal momtong bakkat makgi', '(vasen) keskitorjunta kahdella kämmensyrjällä', '(left) double knifehand outward block'),
-                right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) yangsonnal momtong bakkat makgi', '(oikea) keskitorjunta kahdella kämmensyrjällä', '(right) double knifehand outward block'),
-                left_palmheel_pressing_block: move('left_Palmheel_Block', '(wen) batangson momtong nullo makgi', '(vasen) keskitorjunta kämmenellä painaen', '(left) palmheel pressing block'),
-                right_palmheel_pressing_block: move('right_Palmheel_Block', '(orun) batangson momtong nullo makgi', '(oikea) keskitorjunta kämmenellä painaen', '(right) palmheel pressing block')
+                left_low_block: move('left_Low_Block', '(wen) arae makgi', 'vas. alatorjunta', '(left) low block'),
+                right_low_block: move('right_Low_Block', '(orun) arae makgi', 'oik. alatorjunta', '(right) low block'),
+                left_inward_block: move('left_Inward_Block', '(wen) momtong makgi', 'vas. keskitorjunta sisään', '(left) inward middle block'),
+                right_inward_block: move('right_Inward_Block', '(orun) momtong makgi', 'oik. keskitorjunta sisään', '(right) inward middle block'),
+                left_outward_block: move('left_Outward_Block', '(wen) momtong bakkat makgi', 'vas. keskitorjunta ulos', '(left) outward middle block'),
+                right_outward_block: move('right_Outward_Block', '(orun) momtong bakkat makgi', 'oik. keskitorjunta ulos', '(right) outward middle block'),
+                left_high_block: move('left_High_Block', '(wen) olgul makgi', 'vas. ylätorjunta', '(left) high block'),
+                right_high_block: move('right_High_Block', '(orun) olgul makgi', 'oik. ylätorjunta', '(right) high block'),
+                left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakkat makgi', 'vas. sisäranteella keskitorjunta ulos', '(left) inner-forearm outward block'),
+                right_inner_forearm_outward_block: move('right_Outward_Block', '(orun) an palmok momtong bakkat makgi', 'oik. sisäranteella keskitorjunta ulos', '(right) inner-forearm outward block'),
+                left_inner_forearm_high_outward_block: move('left_High_Outward_Block', '(wen) an palmok olgul bakkat makgi', 'vas. sisäranteella ylätorjunta ulos', '(left) inner-forearm high outward block'),
+                right_inner_forearm_high_outward_block: move('right_High_Outward_Block', '(orun) an palmok olgul bakkat makgi', 'oik. sisäranteella ylätorjunta ulos', '(right) inner-forearm high outward block'),
+                left_knifehand_outward_block: move('left_Knifehand_Outward_Block', '(wen) hansonnal bakkat makgi', 'vas. keskitorjunta kämmensyrjällä', '(left) knifehand outwrad block'),
+                right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) hansonnal bakkat makgi', 'oik. keskitorjunta kämmensyrjällä', '(right) knifehand outwrad block'),
+                left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) yangsonnal momtong bakkat makgi', 'vas. keskitorjunta kahdella kämmensyrjällä', '(left) double knifehand outward block'),
+                right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) yangsonnal momtong bakkat makgi', 'oik. keskitorjunta kahdella kämmensyrjällä', '(right) double knifehand outward block'),
+                left_palmheel_pressing_block: move('left_Palmheel_Block', '(wen) batangson momtong nullo makgi', 'vas. keskitorjunta kämmenellä painaen', '(left) palmheel pressing block'),
+                right_palmheel_pressing_block: move('right_Palmheel_Block', '(orun) batangson momtong nullo makgi', 'oik. keskitorjunta kämmenellä painaen', '(right) palmheel pressing block')
             };
             window.punches = {
-                left_punch: move('left_Punch', '(wen) jireugi', '(vasen) suora lyönti', '(left) punch'),
-                right_punch: move('right_Punch', '(orun) jireugi', '(oikea) suora lyönti', '(right) punch'),
-                left_high_punch: move('left_High_Punch', '(wen) olgul jireugi', '(vasen) ylälyönti', '(left) high punch'),
-                right_high_punch: move('right_High_Punch', '(orun) olgul jireugi', '(oikea) ylälyönti', '(right) high punch'),
-                left_side_punch: move('left_Side_Punch', '(wen) yeop jireugi', '(vasen) sivulyönti', '(left) side punch'),
-                right_side_punch: move('right_Side_Punch', '(orun) yeop jireugi', '(oikea) sivulyönti', '(right) side punch'),
-                left_backfist_strike: move('left_Backfist_Strike', '(wen) deungjumeok apchigi', '(vasen) rystysisku', '(left) backfist strike'),
-                right_backfist_strike: move('right_Backfist_Strike', '(orun) deungjumeok apchigi', '(oikea) rystysisku', '(right) backfist strike'),
-                left_elbow_strike: move('left_Elbow_Strike', '(wen) palkeop yeop chigi', '(vasen) kyynärisku', '(left) elbow strike'),
-                right_elbow_strike: move('right_Elbow_Strike', '(orun) palkeop yeop chigi', '(oikea) kyynärisku', '(right) elbow strike'),
-                left_right_punch: move('Double_Punch', '(wen-orun) jireugi', '(vasen-oikea) tupla lyönti', '(left-right) double punch'),
-                right_left_punch: move('Double_Punch', '(orun-wen) jireugi', '(oikea-vasen) tupla lyönti', '(right-left) double punch'),
-                left_inward_knifehand_strike: move('Inward_Knifehand_Strike', '(wen) sonnal mok chigi', '(vasen) veitsikäden isku sisäänpäin', '(left) inward knifehand strike'),
-                right_inward_knifehand_strike: move('Inward_Knifehand_Strike', '(orun) sonnal mok chigi', '(oikea) veitsikäden isku sisäänpäin', '(right) inward knifehand strike'),
-                left_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(wen) sonnal bakat chigi', '(vasen) veitsikäden isku ulospäin', '(left) outward knifehand strike'),
-                right_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(orun) sonnal bakat chigi', '(oikea) veitsikäden isku ulospäin', '(right) outward knifehand strike'),
-                left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', '(vasen) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(left) swallowform knifehand strike'),
-                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', '(oikea) kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(right) swallowform knifehand strike'),
-                left_supported_spearhand_thrust: move('left_Spearhand_Thrust', '(wen) pyonsonkeut sewotzireugi', '(vasen) tuettu keihäsisku', '(left) supported spearhand thrust'),
-                right_supported_spearhand_thrust: move('right_Spearhand_Thrust', '(orun) pyonsonkeut sewotzireugi', '(oikea) tuettu keihäsisku', '(right) supported spearhand thrust')
+                left_punch: move('left_Punch', '(wen) jireugi', 'vas. suora lyönti', '(left) punch'),
+                right_punch: move('right_Punch', '(orun) jireugi', 'oik. suora lyönti', '(right) punch'),
+                left_high_punch: move('left_High_Punch', '(wen) olgul jireugi', 'vas. ylälyönti', '(left) high punch'),
+                right_high_punch: move('right_High_Punch', '(orun) olgul jireugi', 'oik. ylälyönti', '(right) high punch'),
+                left_side_punch: move('left_Side_Punch', '(wen) yeop jireugi', 'vas. sivulyönti', '(left) side punch'),
+                right_side_punch: move('right_Side_Punch', '(orun) yeop jireugi', 'oik. sivulyönti', '(right) side punch'),
+                left_backfist_strike: move('left_Backfist_Strike', '(wen) deungjumeok apchigi', 'vas. rystysisku', '(left) backfist strike'),
+                right_backfist_strike: move('right_Backfist_Strike', '(orun) deungjumeok apchigi', 'oik. rystysisku', '(right) backfist strike'),
+                left_elbow_strike: move('left_Elbow_Strike', '(wen) palkeop yeop chigi', 'vas. kyynärisku', '(left) elbow strike'),
+                right_elbow_strike: move('right_Elbow_Strike', '(orun) palkeop yeop chigi', 'oik. kyynärisku', '(right) elbow strike'),
+                left_elbow_target_strike: move('left_Elbow_Target_Strike', '(wen) palkeop pyojok chigi', 'vas. avustettu kyynärisku', '(left) elbow target strike'),
+                right_elbow_target_strike: move('right_Elbow_Target_Strike', '(orun) palkeop pyojok chigi', 'oik. avustettu kyynärisku', '(right) elbow target strike'),
+                left_right_punch: move('Double_Punch', '(wen-orun) jireugi', 'vasen-oikea tuplalyönti', '(left-right) double punch'),
+                right_left_punch: move('Double_Punch', '(orun-wen) jireugi', 'oikea-vasen tuplalyönti', '(right-left) double punch'),
+                left_inward_knifehand_strike: move('Inward_Knifehand_Strike', '(wen) sonnal mok chigi', 'vas. veitsikäden isku sisäänpäin', '(left) inward knifehand strike'),
+                right_inward_knifehand_strike: move('Inward_Knifehand_Strike', '(orun) sonnal mok chigi', 'oik. veitsikäden isku sisäänpäin', '(right) inward knifehand strike'),
+                left_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(wen) sonnal bakat chigi', 'vas. veitsikäden isku ulospäin', '(left) outward knifehand strike'),
+                right_outward_knifehand_strike: move('Outward_Knifehand_Strike', '(orun) sonnal bakat chigi', 'oik. veitsikäden isku ulospäin', '(right) outward knifehand strike'),
+                left_swallowform_knifehand_strike: move('left_Swallowform_Knifehand_Strike', '(wen) jebipoom mokchigi', 'vas. kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(left) swallowform knifehand strike'),
+                right_swallowform_knifehand_strike: move('right_Swallowform_Knifehand_Strike', '(orun) jebipoom mokchigi', 'oik. kämmensyrjäisku kaulaan + kämmensyrjätorjunta', '(right) swallowform knifehand strike'),
+                left_supported_spearhand_thrust: move('left_Spearhand_Thrust', '(wen) pyonsonkeut sewotzireugi', 'vas. tuettu keihäsisku', '(left) supported spearhand thrust'),
+                right_supported_spearhand_thrust: move('right_Spearhand_Thrust', '(orun) pyonsonkeut sewotzireugi', 'oik. tuettu keihäsisku', '(right) supported spearhand thrust'),
+                left_downward_hammerfirst_strike: move('left_Hammerfist_Strike', '(wen) mejumeok naeryo chigi', 'vas. vasaraisku', '(left) hammerfist strike'),
+                right_downward_hammerfirst_strike: move('right_Hammerfist_Strike', '(orun) mejumeok naeryo chigi', 'oik. vasaraisku', '(right) hammerfist strike')
             };
             window.kicks = {
-                left_front_kick: move('left_Front_Kick', '(wen) ap chagi', '(vasen) etupotku', '(left) front kick'),
-                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', '(oikea) etupotku', '(right) front kick'),
-                left_jump_front_kick: move('left_Jump_Front_Kick', '(wen) ttwieo ap chagi', '(vasen) hyppyetupotku', '(left) jump front kick'),
-                right_jump_front_kick: move('right_Jump_Front_Kick', '(orun) ttwieo ap chagi', '(oikea) hyppyetupotku', '(right) jump front kick'),
-                left_back_kick: move('left_Back_Kick', '(wen) dwi chagi', '(vasen) takapotku', '(left) back kick'),
-                right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', '(oikea) takapotku', '(right) back kick'),
-                left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', '(vasen) kiertopotku', '(left) turning kick'),
-                right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', '(oikea) kiertopotku', '(right) turning kick'),
-                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baaldung dollyeo chagi', '(vasen) yläkiertopotku jalkapöydällä', '(left) high turning instep kick'),
-                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baaldung dollyeo chagi', '(oikea) yläkiertopotku jalkapöydällä', '(right) high turning instep kick'),
-                left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', '(vasen) sivupotku', '(left) side kick'),
-                right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', '(oikea) sivupotku', '(right) side kick'),
-                left_rear_whip_kick: move('left_Whip_Kick', '(wen) dwi huryeo chagi', '(vasen) takaruoskapotku', '(left) rear whip kick'),
-                right_rear_whip_kick: move('right_Whip_Kick', '(orun) dwi huryeo chagi', '(oikea) takaruoskapotku', '(right) rear whip kick')
+                left_front_kick: move('left_Front_Kick', '(wen) ap chagi', 'vas. etupotku', '(left) front kick'),
+                right_front_kick: move('right_Front_Kick', '(orun) ap chagi', 'oik. etupotku', '(right) front kick'),
+                left_jump_front_kick: move('left_Jump_Front_Kick', '(wen) ttwieo ap chagi', 'vas. hyppyetupotku', '(left) jump front kick'),
+                right_jump_front_kick: move('right_Jump_Front_Kick', '(orun) ttwieo ap chagi', 'oik. hyppyetupotku', '(right) jump front kick'),
+                left_back_kick: move('left_Back_Kick', '(wen) dwi chagi', 'vas. takapotku', '(left) back kick'),
+                right_back_kick: move('right_Back_Kick', '(orun) dwi chagi', 'oik. takapotku', '(right) back kick'),
+                left_turning_kick: move('left_Turning_Kick', '(wen) dollyeo chagi', 'vas. kiertopotku', '(left) turning kick'),
+                right_turning_kick: move('right_Turning_Kick', '(orun) dollyeo chagi', 'oik. kiertopotku', '(right) turning kick'),
+                left_high_turning_instep_kick: move('left_Turning_Kick', '(wen) olgul baaldung dollyeo chagi', 'vas. yläkiertopotku jalkapöydällä', '(left) high turning instep kick'),
+                right_high_turning_instep_kick: move('right_Turning_Kick', '(orun) olgul baaldung dollyeo chagi', 'oik. yläkiertopotku jalkapöydällä', '(right) high turning instep kick'),
+                left_side_kick: move('left_Side_Kick', '(wen) yeop chagi', 'vas. sivupotku', '(left) side kick'),
+                right_side_kick: move('right_Side_Kick', '(orun) yeop chagi', 'oik. sivupotku', '(right) side kick'),
+                left_side_kick_punch: move('left_Side_Kick', '(wen) yeop chagi', 'vas. sivupotku lyönnillä', '(left) side kick with punch'),
+                right_side_kick_punch: move('right_Side_Kick', '(orun) yeop chagi', 'oik. sivupotku lyönnillä', '(right) side kick with punch'),
+                left_rear_whip_kick: move('left_Whip_Kick', '(wen) dwi huryeo chagi', 'vas. takaruoskapotku', '(left) rear whip kick'),
+                right_rear_whip_kick: move('right_Whip_Kick', '(orun) dwi huryeo chagi', 'oik. takaruoskapotku', '(right) rear whip kick')
             };
 
             var part = function(row, col, moves) {
@@ -770,24 +779,52 @@
                         part(4, 3, [left_90, left_front_stance, left_inward_block, right_left_punch]),
                         part(5, 3, [forward, right_front_stance, right_inward_block, left_right_punch, kihap])
                     ]
+                },
+                {
+                    name: 'taeguk5',
+                    parts: [
+                        part(5, 3, [junbi]),
+                        part(5, 2, [left_90, left_front_stance, left_low_block]),
+                        part(5, 2, [left_stance, left_downward_hammerfirst_strike]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 4, [right_stance, right_downward_hammerfirst_strike]),
+                        part(5, 5, []),
+                        part(4, 3, [left_90, left_front_stance, left_inward_block, right_inward_block]),
+                        part(3, 3, [right_front_kick, right_front_stance, right_backfist_strike, left_inward_block]),
+                        part(2, 3, [left_front_kick, left_front_stance, left_backfist_strike, right_inward_block]),
+                        part(1, 3, [forward, right_front_stance, right_backfist_strike]),
+                        part(1, 3, []),
+                        part(1, 4, [left_270, right_back_stance, left_knifehand_outward_block]),
+                        part(1, 5, [forward, right_front_stance, right_elbow_strike]),
+                        part(1, 2, [right_180, left_back_stance, right_knifehand_outward_block]),
+                        part(1, 1, [forward, left_front_stance, left_elbow_strike]),
+                        part(1, 3, []),
+                        part(2, 3, [left_90, left_front_stance, left_low_block, right_inward_block]),
+                        part(3, 3, [right_front_kick, right_front_stance, right_low_block, left_inward_block]),
+                        part(3, 3, []),
+                        part(3, 4, [left_90, left_front_stance, left_high_block]),
+                        part(3, 5, [right_side_kick_punch, left_elbow_target_strike]),
+                        part(3, 2, [right_180, right_front_stance, right_high_block]),
+                        part(3, 1, [left_side_kick_punch, right_elbow_target_strike]),
+                        part(3, 3, []),
+                        part(4, 3, [left_90, left_front_stance, left_low_block, right_inward_block]),
+                        part(5, 3, [right_front_kick, right_rear_cross_stance, right_backfist_strike, kihap])
+                    ]
                 }];
             };
         </script>
     </head>
     <body>
-        <div class="credits">
-            <p>Content adapted from:</p>
-            <ul>
-                <li><a href="https://taekwondo.fandom.com/">Taekwondo wiki</a></li>
-                <li><a href="https://www.taekwondovihti.fi">Vihti Taekwondo</a></li>
-            </ul>
-        </div>
-
         <section>
             <h2 onclick="">Terms</h2>
             <div class="content" id="terms">
                 <section>
                     <div class="content">
+                        <h4>Content adapted from:</h4>
+                        <ul>
+                            <li><a href="https://taekwondo.fandom.com/">Taekwondo wiki</a></li>
+                            <li><a href="https://www.taekwondovihti.fi">Vihti Taekwondo</a></li>
+                        </ul>
                     </div>
                 </section>
             </div>
@@ -1078,6 +1115,22 @@
                         <ol class="moves"></ol>
                     </div>
                 </section>
+
+                <section id="taeguk5">
+                    <h3 onclick=""><span class="print">TAEGUK </span>OH (5.) JANG</h3>
+                    <div class="content">
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/8/83/PoomsaeT5_3D.png/revision/latest?cb=20170329214005" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/h6zsFJ6pSwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <table class="pattern">
+                            <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr><td class="l"></td><td class="t b"></td><td class="b"></td><td class="t b"></td><td class="r"></td></tr>
+                            <tr><td class=" "></td><td class="   "></td><td class="b"></td><td class="   "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="t  "></td><td class="b"></td><td class="t  "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class="  b"></td><td class="b"></td><td class="  b"></td><td class=" "></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -1092,7 +1145,7 @@
                 d.innerHTML += '<h4>' + group + '</h4>';
                 var table = d.appendChild(document.createElement('table'));
                 table.innerHTML = Object.keys(terms).map(function(key) { return terms[key]; }).map(function(term) {
-                    return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="http://taekwondo.wikia.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
+                    return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="https://taekwondo.fandom.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
                 }).join(' ');
             };
             h('Suunnat', directions);
