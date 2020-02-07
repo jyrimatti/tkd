@@ -32,6 +32,7 @@
 
             /* lightyellow, darkorange, 9 */
             .junbi { background-color: #ffffe0; }
+            .ready_stance { background-color: #ffffe0; }
             .left_walking_stance, .right_walking_stance { background-color: #fff2c9; }
             .left_sparring_stance, .right_sparring_stance { background-color: #ffe5b2; }
             .left_horse_stance, .right_horse_stance { background-color: #ffd79b; }
@@ -49,6 +50,9 @@
             .left_knifehand_outward_block, .right_knifehand_outward_block { background-color: #52b54b; }
             .left_double_knifehand_outward_block, .right_double_knifehand_outward_block { background-color: #42a73b; }
             .left_palmheel_block, .right_palmheel_block { background-color: #339a2b; }
+            .left_pressing_block, .right_pressing_block { background-color: #339a2b; }
+            .left_knifehand_high_twist_block, .right_knifehand_high_twist_block { background-color: #339a2b; }
+            .low_opening_block { background-color: #339a2b; }
 
             /* PowderBlue, RoyalBlue, 12 */
             .left_punch, .right_punch { background-color: #b0e0e6; }
@@ -279,6 +283,7 @@
             section:hover #terms .content { height: 230em; width: 100%; left: 0; display: block; }
             section:hover #terms td { width: 30%; }
             section:hover #terms .translate { display: table-cell; width: 10%; min-width: 10%; }
+            section:hover #terms .translate.hidden { visibility : hidden; }
             section:hover #terms tr { display: table-row; }
             section:hover #terms iframe { display: none; }
             section:hover #terms .selected td { border: 0; }
@@ -357,7 +362,7 @@
             };
             window.commands = {
                 attention: move('attention', 'charyeot', 'huomio', 'attention', 'https://translate.google.com/#ko/en/차렷'),
-                junbi: move('junbi', 'junbi', 'valmistaudu', 'get ready', 'https://translate.google.com/#ko/en/준비'),
+                junbi: move('Ready_Stance', 'junbi', 'valmistaudu', 'get ready', 'https://translate.google.com/#ko/en/준비'),
                 begin: move('begin', 'sijak', 'aloita', 'begin', 'https://translate.google.com/#ko/en/시작'),
                 stop: move('stop', 'geuman', 'lopeta', 'stop', 'https://translate.google.com/#ko/en/그만'),
                 return: move('return', 'baro', 'paluu valmiusasentoon', 'return to starting position', 'https://translate.google.com/#ko/en/바로'),
@@ -365,6 +370,7 @@
                 kihap: move('kihap', 'kihap', 'huuto!', 'yell!', 'https://translate.google.com/#ko/en/기합')
             };
             window.stances = {
+                ready_stance: move('Ready_Stance', 'junbi sogi', 'valmiusasento', 'ready stance'),
                 left_sparring_stance: move('left_Sparring_Stance', '(wen) gyorugi junbi', 'vas. otteluasento', '(left) sparring stance'),
                 right_sparring_stance: move('right_Sparring_Stance', '(orun) gyorugi junbi', 'oik. otteluasento', '(right) sparring stance'),
                 left_front_stance: move('left_Front_Stance', '(wen) ap kubi', 'vas. pitkä perusaskel', '(left) front stance'),
@@ -387,6 +393,8 @@
                 right_inward_block: move('right_Inward_Block', '(orun) momtong makgi', 'oik. keskitorjunta sisään', '(right) inward middle block'),
                 left_outward_block: move('left_Outward_Block', '(wen) momtong bakkat makgi', 'vas. keskitorjunta ulos', '(left) outward middle block'),
                 right_outward_block: move('right_Outward_Block', '(orun) momtong bakkat makgi', 'oik. keskitorjunta ulos', '(right) outward middle block'),
+                left_high_outward_block: move('left_High_Outward_Block', '(wen) olgul bakkat makgi', 'vas. ylätorjunta ulos', '(left) high outward block'),
+                right_high_outward_block: move('right_High_Outward_Block', '(orun) olgul bakkat makgi', 'oik. ylätorjunta ulos', '(right) high outward block'),
                 left_high_block: move('left_High_Block', '(wen) olgul makgi', 'vas. ylätorjunta', '(left) high block'),
                 right_high_block: move('right_High_Block', '(orun) olgul makgi', 'oik. ylätorjunta', '(right) high block'),
                 left_inner_forearm_outward_block: move('left_Outward_Block', '(wen) an palmok momtong bakkat makgi', 'vas. sisäranteella keskitorjunta ulos', '(left) inner-forearm outward block'),
@@ -397,8 +405,13 @@
                 right_knifehand_outward_block: move('right_Knifehand_Outward_Block', '(orun) hansonnal bakkat makgi', 'oik. keskitorjunta kämmensyrjällä', '(right) knifehand outwrad block'),
                 left_double_knifehand_outward_block: move('left_Double_Knifehand_Outward_Block', '(wen) yangsonnal momtong bakkat makgi', 'vas. keskitorjunta kahdella kämmensyrjällä', '(left) double knifehand outward block'),
                 right_double_knifehand_outward_block: move('right_Double_Knifehand_Outward_Block', '(orun) yangsonnal momtong bakkat makgi', 'oik. keskitorjunta kahdella kämmensyrjällä', '(right) double knifehand outward block'),
-                left_palmheel_pressing_block: move('left_Palmheel_Block', '(wen) batangson momtong nullo makgi', 'vas. keskitorjunta kämmenellä painaen', '(left) palmheel pressing block'),
-                right_palmheel_pressing_block: move('right_Palmheel_Block', '(orun) batangson momtong nullo makgi', 'oik. keskitorjunta kämmenellä painaen', '(right) palmheel pressing block')
+                left_palmheel_block: move('left_Palmheel_Block', '(wen) batangson momtong makgi', 'vas. keskitorjunta kämmenellä', '(left) palmheel block'),
+                right_palmheel_block: move('right_Palmheel_Block', '(orun) batangson momtong makgi', 'oik. keskitorjunta kämmenellä', '(right) palmheel block'),
+                left_palmheel_pressing_block: move('left_Pressing_Block', '(wen) batangson momtong nullo makgi', 'vas. keskitorjunta kämmenellä painaen', '(left) palmheel pressing block'),
+                right_palmheel_pressing_block: move('right_Pressing_Block', '(orun) batangson momtong nullo makgi', 'oik. keskitorjunta kämmenellä painaen', '(right) palmheel pressing block'),
+                left_knifehand_high_twist_block: move('left_Knifehand_High_Twist_Block', '(wen) han sonnal olgul bituro makgi', 'vas. ylätorjunta kämmensyrjällä vartaloa kääntäen', '(left) knifehand high twist block'),
+                right_knifehand_high_twist_block: move('right_Knifehand_High_Twist_Block', '(orun) han sonnal olgul bituro makgi', 'oik. ylätorjunta kämmensyrjällä vartaloa kääntäen', '(right) knifehand high twist block'),
+                low_opening_block: move('Low_Opening_Block', 'arae hecho makgi', 'kahden käden alatorjunta sivuille', 'two hand low block to the side')
             };
             window.punches = {
                 left_punch: move('left_Punch', '(wen) jireugi', 'vas. suora lyönti', '(left) punch'),
@@ -810,6 +823,39 @@
                         part(4, 3, [left_90, left_front_stance, left_low_block, right_inward_block]),
                         part(5, 3, [right_front_kick, right_rear_cross_stance, right_backfist_strike, kihap])
                     ]
+                },
+                {
+                    name: 'taeguk6',
+                    parts: [
+                        part(5, 3, [junbi]),
+                        part(5, 2, [left_90, left_front_stance, left_low_block]),
+                        part(5, 1, [right_front_kick, right_back_stance, left_outward_block]),
+                        part(5, 4, [right_180, right_front_stance, right_low_block]),
+                        part(5, 5, [left_front_kick, left_back_stance, right_outward_block]),
+                        part(5, 3, []),
+                        part(4, 3, [left_90, left_front_stance, right_knifehand_high_twist_block]),
+                        part(3, 3, [right_turning_kick]),
+                        part(3, 3, []),
+                        part(3, 2, [left_90, left_front_stance, left_high_outward_block, right_punch]),
+                        part(3, 1, [right_front_kick, right_front_stance, left_punch]),
+                        part(3, 4, [right_180, right_front_stance, right_high_outward_block, left_punch]),
+                        part(3, 5, [left_front_kick, left_front_stance, right_punch]),
+                        part(3, 3, []),
+                        part(3, 3, [ready_stance, low_opening_block]),
+                        part(2, 3, [forward, right_front_stance, left_knifehand_high_twist_block]),
+                        part(1, 3, [left_turning_kick, kihap]),
+                        part(1, 3, []),
+                        part(1, 2, [right_270, right_front_stance, right_low_block]),
+                        part(1, 1, [left_front_kick, left_back_stance, right_outward_block]),
+                        part(1, 4, [left_180, left_front_stance, left_low_block]),
+                        part(1, 5, [right_front_kick, right_back_stance, left_outward_block]),
+                        part(1, 3, []),
+                        part(1, 3, [left_90]),
+                        part(2, 3, [backward, right_back_stance, left_double_knifehand_outward_block]),
+                        part(3, 3, [backward, left_back_stance, right_double_knifehand_outward_block]),
+                        part(4, 3, [backward, left_front_stance, left_palmheel_block, right_punch]),
+                        part(5, 3, [backward, right_front_stance, right_palmheel_block, left_punch])
+                    ]
                 }];
             };
         </script>
@@ -1131,6 +1177,22 @@
                         <ol class="moves"></ol>
                     </div>
                 </section>
+
+                <section id="taeguk6">
+                    <h3 onclick=""><span class="print">TAEGUK </span>YOOK (6.) JANG</h3>
+                    <div class="content">
+                        <img class="resource" src="https://vignette.wikia.nocookie.net/taekwondo/images/f/f0/PoomsaeT6_3D.png/revision/latest/scale-to-width-down/1024?cb=20180517000505" />
+                        <iframe class="resource" width="680" height="510" src="https://www.youtube.com/embed/eRTQHD340v8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <table class="pattern">
+                            <tr><td class="l"></td><td class=" "></td><td class=" "></td><td class=" "></td><td class="r"></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td><td class=" "></td></tr>
+                            <tr><td class="l"></td><td class=" "></td><td class=" "></td><td class=" "></td><td class="r"></td></tr>
+                        </table>
+                        <ol class="moves"></ol>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -1145,12 +1207,13 @@
                 d.innerHTML += '<h4>' + group + '</h4>';
                 var table = d.appendChild(document.createElement('table'));
                 table.innerHTML = Object.keys(terms).map(function(key) { return terms[key]; }).map(function(term) {
-                    return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="https://taekwondo.fandom.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
+                    return !term.ko ? '' : '<tr class="' + term.name + '"><td class="translate ' + (term.translate ? '' : 'hidden') + '"><a href="' + term.translate + '">🔈</a></td><td>' + term.ko + '</td><td>' + term.fi + '</td><td>' + term.en + '</td><td><iframe sandbox="" src="about:blank" data-src="https://taekwondo.fandom.com/wiki/' + term.name.replace('left_', '').replace('right_', '') + '"></iframe></td></tr>';
                 }).join(' ');
             };
             h('Suunnat', directions);
             h('Kehonosat', body);
             h('Asennot', stances);
+            h('Komennot', commands);
             h('Torjunnat', blocks);
             h('Iskut', punches);
             h('Potkut', kicks);
